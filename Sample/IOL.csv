@@ -1,0 +1,9 @@
+Biometric values,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9
+,AL: 23.80 mm,SD:,8 m,,,AL: 24.02 mm,SD:,8 m,
+,ACD:2.57 mm,SD:,5 m,,ACD:,2.50 mm,SD:,6 m,
+,LT: 5.17 mm,SD:,7 m,,LT:,5.34 mm,SD:,12 m,
+,WTW: 11.8 mm,,,,,WTW: 11.8 mm,,,
+,SE: 42.06 D,SD: 0.02 D,K1: 41.45 D,@.81,,SE: 41.41 D,SD: 0.03 D,K1: 41.29 D,@131:
+K: -1.24 D,,@ 81,K2: 42.68 D,@171,AK: -923R,,@131,K2: 41.52 D,.41
+TSE: 41.95 D,,SO: 0.01 D,TK1: 41.13 D,@ 85,TSE: 41.34 D,,SD: 0.03 D,TK1: 41.12 D,@105
+TK: -1.66 D,,@ 85,TK2: 42.80 D,@175,TK: -0.45 D,,@105*,TK2: 41.56 D,@ 15
