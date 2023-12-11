@@ -1,0 +1,5230 @@
+Patient
+
+SUWANBOOT, CHATREE
+
+Date of birth
+Patient ID
+
+Physician
+
+1/1/1947
+45006387
+
+Dr.Naris
+
+Gender
+
+Male
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+Date of calibration test: 5/12/2022
+5/12/2022
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+!
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+AL: 23.80 mm
+ACD: 2.57 mm
+LT: 5.17 mm
+WTW: 11.8 mm
+
+SD:
+SD:
+SD:
+
+8 µm
+5 µm
+7 µm
+
+Biometric values
+
+AL: 24.02 mm
+ACD: 2.50 mm
+LT: 5.34 mm
+WTW: 11.8 mm
+
+SD:
+SD:
+SD:
+
+8 µm
+6 µm
+12 µm
+
+SE: 42.06 D
+ΔK: -1.24 D @ 81°
+TSE: 41.95 D
+ΔTK: -1.66 D @ 85°
+Alcon SA60WF/SN60WF
+K
+
+SD: 0.02 D
+
+SD: 0.01 D
+
+K1: 41.45 D @ 81°
+K2: 42.68 D @171°
+TK1: 41.13 D @ 85°
+TK2: 42.80 D @175°
+K AMO Tecnis 1 ZCB/ZCT/GCB/
+
+SE: 41.41 D
+ΔK: -0.22 D @131°
+TSE: 41.34 D
+ΔTK: -0.45 D @105°
+Alcon SA60WF/SN60WF
+K
+
+SD: 0.03 D
+
+SD: 0.03 D
+
+K1: 41.29 D @131°
+K2: 41.52 D @ 41°
+TK1: 41.12 D @105°
+TK2: 41.56 D @ 15°
+K AMO Tecnis 1 ZCB/ZCT/GCB/
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.79
++23.00
+-0.43
++22.50
+-0.08
++22.00
++0.27
++21.50
++21.00
++0.61
++21.89 Emmetropia
+
+ICB/ZFR/ZMB
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.86
++23.50
+-0.51
++23.00
+-0.16
++22.50
++0.18
++22.00
++21.50
++0.52
++22.26 Emmetropia
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.75
++23.00
+-0.39
++22.50
+-0.04
++22.00
++0.31
++21.50
++21.00
++0.66
++21.94 Emmetropia
+
+ICB/ZFR/ZMB
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.83
++23.50
+-0.48
++23.00
+-0.13
++22.50
++0.22
++22.00
++21.50
++0.56
++22.31 Emmetropia
+
+K Alcon PanOptix TFNT00/TFNT
+
+20-T60
+- SRK®/T -
+A const.: 119.10
+Ref (D)
+IOL (D)
+-0.69
++23.00
+-0.34
++22.50
++0.01
++22.00
++0.35
++21.50
++21.00
++0.69
++22.01 Emmetropia
+
+K
+
+AMO SENSAR AR40e
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.70
++22.50
+-0.34
++22.00
++0.01
++21.50
++0.36
++21.00
++20.50
++0.71
++21.52 Emmetropia
+
+K Alcon PanOptix TFNT00/TFNT
+
+20-T60
+- SRK®/T -
+A const.: 119.10
+Ref (D)
+IOL (D)
+-0.66
++23.00
+-0.31
++22.50
++0.05
++22.00
++0.39
++21.50
++21.00
++0.74
++22.07 Emmetropia
+
+K
+
+AMO SENSAR AR40e
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.66
++22.50
+-0.30
++22.00
++0.06
++21.50
++0.41
++21.00
++20.50
++0.76
++21.58 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.90.12.05
+
+Report dated 5/12/2022 19:16; created by DO-0987651234
+
+Page 1 of 7
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+Patient
+
+Suksunai Laddawan
+
+Date of birth
+Patient ID
+
+Physician
+
+12/26/1961
+38005485
+
+Dr.Naris
+
+Gender
+
+Female
+
+Operator
+
+Surgeon
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 4/4/2019
+4/4/2019
+Date of measurement:
+
+by:
+n:
+
+Surgeon
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+[OD] SRK® is a trademark of CTI (Computational Technology Inc.)
+[OS] SRK® is a trademark of CTI (Computational Technology Inc.)
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+6 µm
+SD:
+4 µm
+SD:
+SD: 11 µm
+
+AL: 22.39 mm
+ACD: 2.93 mm
+LT: 4.37 mm
+WTW: 11.8 mm
+SE: 45.85 D
+ΔK: -0.79 D @ 102°
+TSE: 45.98 D
+ΔTK: -1.03 D @ 102°
+AMO Tecnis 1 ZCB00
+K
+
+SD:0.01 D K1: 45.46 D @ 102°
+K2: 46.24 D @ 12°
+SD:0.01 D TK1: 45.48 D @ 102°
+TK2: 46.51 D @ 12°
+
+4 µm
+SD:
+6 µm
+SD:
+SD: 11 µm
+
+AL: 22.25 mm
+ACD: 2.92 mm
+LT: 4.37 mm
+WTW: 12.0 mm
+SE: 45.71 D
+ΔK: -0.34 D @ 111°
+TSE: 45.82 D
+ΔTK: -0.46 D @ 106°
+AMO Tecnis 1 ZCB00
+K
+
+SD:0.01 D K1: 45.54 D @ 111°
+K2: 45.88 D @ 21°
+SD:0.03 D TK1: 45.59 D @ 106°
+TK2: 46.05 D @ 16°
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.72
++24.00
+-0.39
++23.50
+-0.06
++23.00
++0.27
++22.50
++22.00
++0.59
++22.91 Emmetropia
+
+K
+
+Alcon SN60WF
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.68
++23.50
+-0.34
++23.00
+-0.01
++22.50
++0.32
++22.00
++21.50
++0.65
++22.49 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.62
++24.50
+-0.28
++24.00
++0.05
++23.50
++0.37
++23.00
++22.50
++0.70
++23.57 Emmetropia
+
+K
+
+Alcon SN60WF
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.59
++24.00
+-0.25
++23.50
++0.09
++23.00
++0.42
++22.50
++22.00
++0.75
++23.13 Emmetropia
+
+K
+
+Acriva BB UDM 611
+
+K
+
+Alcon Toric SN6AT(2-9)
+
+K
+
+Acriva BB UDM 611
+
+K
+
+Alcon Toric SN6AT(2-9)
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.63
++23.00
+-0.29
++22.50
++0.05
++22.00
++0.38
++21.50
++21.00
++0.71
++22.07 Emmetropia
+
+- SRK®/T -
+A const.: 119.20
+Ref (D)
+IOL (D)
+-0.82
++24.00
+-0.48
++23.50
+-0.15
++23.00
++0.18
++22.50
++22.00
++0.50
++22.77 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.54
++23.50
+-0.20
++23.00
++0.14
++22.50
++0.48
++22.00
++21.50
++0.81
++22.71 Emmetropia
+
+- SRK®/T -
+A const.: 119.20
+Ref (D)
+IOL (D)
+-0.72
++24.50
+-0.38
++24.00
+-0.05
++23.50
++0.28
++23.00
++22.50
++0.61
++23.42 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 4/4/2019 7:13 PM; created by Surgeon
+
+Page 1 of 7
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+Patient
+
+PONGKUNAKORN, THAWATCHAI
+
+Date of birth
+Patient ID
+
+Physician
+
+6/25/1962
+52749953
+
+Monofocal
+
+Gender
+
+Male
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+Date of calibration test: 8/19/2021
+8/19/2021
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+!
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+AL: 23.41 mm
+ACD: 2.63 mm
+LT: 4.37 mm
+WTW: 11.3 mm
+
+SD:
+SD:
+SD:
+
+10 µm
+6 µm
+13 µm
+
+Biometric values
+
+AL: 23.61 mm
+ACD: 2.64 mm
+LT: 4.36 mm
+WTW: 11.3 mm
+
+SD:
+SD:
+SD:
+
+11 µm
+6 µm
+10 µm
+
+SE: 44.61 D
+ΔK: -1.12 D @117°
+TSE: 44.64 D
+ΔTK: -1.25 D @113°
+Alcon SA60WF/SN60WF
+K
+
+SD: 0.02 D
+
+SD: 0.03 D
+
+K1: 44.06 D @117°
+K2: 45.18 D @ 27°
+TK1: 44.02 D @113°
+TK2: 45.27 D @ 23°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+SE: 44.18 D
+ΔK: -1.17 D @ 84°
+TSE: 44.14 D
+ΔTK: -1.35 D @ 85°
+Alcon SA60WF/SN60WF
+K
+
+SD: 0.00 D
+
+SD: 0.05 D
+
+K1: 43.61 D @ 84°
+K2: 44.77 D @174°
+TK1: 43.47 D @ 85°
+TK2: 44.82 D @175°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.75
++21.50
+-0.41
++21.00
+-0.07
++20.50
++0.26
++20.00
++19.50
++0.58
++20.39 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.82
++22.00
+-0.49
++21.50
+-0.16
++21.00
++0.17
++20.50
++20.00
++0.49
++20.76 Emmetropia
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.52
++21.00
+-0.18
++20.50
++0.15
++20.00
++0.48
++19.50
++19.00
++0.80
++20.22 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.60
++21.50
+-0.27
++21.00
++0.06
++20.50
++0.38
++20.00
++19.50
++0.70
++20.59 Emmetropia
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.76
++23.00
+-0.44
++22.50
+-0.12
++22.00
++0.19
++21.50
++21.00
++0.50
++21.81 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.66
++21.00
+-0.32
++20.50
++0.02
++20.00
++0.35
++19.50
++19.00
++0.68
++20.03 Emmetropia
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.56
++22.50
+-0.24
++22.00
++0.07
++21.50
++0.38
++21.00
++20.50
++0.69
++21.61 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.77
++21.00
+-0.43
++20.50
+-0.09
++20.00
++0.25
++19.50
++19.00
++0.58
++19.87 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.90.12.05
+
+Report dated 8/19/2021 17:22; created by DO-0987651234
+
+Page 1 of 7
+
+Patient
+
+WONGDONTRI VINIJ
+
+Date of birth
+Patient ID
+
+Physician
+
+4/2/1950
+41125150
+
+Monofocal
+
+Gender
+
+Male
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 12/17/2020
+12/17/2020
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+[OD] SRK® is a trademark of CTI (Computational Technology Inc.)
+[OS] SRK® is a trademark of CTI (Computational Technology Inc.)
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+7 µm
+6 µm
+8 µm
+
+SD:
+SD:
+SD:
+
+AL: 23.74 mm
+ACD: 2.94 mm
+LT: 4.73 mm
+WTW: 11.7 mm
+SE: 42.68 D
+ΔK: -1.69 D @ 88°
+TSE: 42.71 D
+ΔTK: -1.68 D @ 88°
+Alcon SA60WF/SN60WF
+K
+
+SD:0.01 D K1: 41.85 D @ 88°
+K2: 43.55 D @ 178°
+SD:0.01 D TK1: 41.89 D @ 88°
+TK2: 43.57 D @ 178°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+7 µm
+5 µm
+7 µm
+
+SD:
+SD:
+SD:
+
+AL: 23.80 mm
+ACD: 2.96 mm
+LT: 4.87 mm
+WTW: 11.5 mm
+SE: 42.50 D
+ΔK: -1.88 D @ 92°
+TSE: 42.54 D
+ΔTK: -1.93 D @ 93°
+Alcon SA60WF/SN60WF
+K
+
+SD:0.02 D K1: 41.58 D @ 92°
+K2: 43.46 D @ 2°
+SD:0.04 D TK1: 41.60 D @ 93°
+TK2: 43.53 D @ 3°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.75
++22.50
+-0.40
++22.00
+-0.06
++21.50
++0.29
++21.00
++20.50
++0.63
++21.42 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.83
++23.00
+-0.49
++22.50
+-0.14
++22.00
++0.20
++21.50
++21.00
++0.53
++21.79 Emmetropia
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.76
++22.50
+-0.41
++22.00
+-0.06
++21.50
++0.28
++21.00
++20.50
++0.62
++21.41 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.83
++23.00
+-0.49
++22.50
+-0.15
++22.00
++0.19
++21.50
++21.00
++0.53
++21.79 Emmetropia
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.77
++24.00
+-0.44
++23.50
+-0.11
++23.00
++0.22
++22.50
++22.00
++0.54
++22.84 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.67
++22.00
+-0.31
++21.50
++0.04
++21.00
++0.39
++20.50
++20.00
++0.73
++21.06 Emmetropia
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.77
++24.00
+-0.44
++23.50
+-0.11
++23.00
++0.22
++22.50
++22.00
++0.54
++22.83 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.67
++22.00
+-0.32
++21.50
++0.03
++21.00
++0.38
++20.50
++20.00
++0.72
++21.05 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 12/17/2020 17:32; created by DO-0987651234
+
+Page 1 of 7
+
+Patient
+
+JANTRANAPHAPORN KITTIPONG
+
+Date of birth
+Patient ID
+
+Physician
+
+7/11/1949
+52616399
+
+Monofocal
+
+Gender
+
+Male
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 6/30/2020
+6/30/2020
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+[OD] SRK® is a trademark of CTI (Computational Technology Inc.)
+[OS] SRK® is a trademark of CTI (Computational Technology Inc.)
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+6 µm
+4 µm
+9 µm
+
+SD:
+SD:
+SD:
+
+AL: 23.20 mm
+ACD: 2.15 mm
+LT: 5.33 mm
+WTW: 11.4 mm
+SE: 44.54 D
+ΔK: -0.66 D @ 30°
+TSE: 44.65 D
+ΔTK: -0.63 D @ 37°
+Alcon SA60WF/SN60WF
+K
+
+SD:0.01 D K1: 44.21 D @ 30°
+K2: 44.87 D @ 120°
+SD:0.04 D TK1: 44.34 D @ 37°
+TK2: 44.97 D @ 127°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+8 µm
+3 µm
+4 µm
+
+SD:
+SD:
+SD:
+
+AL: 23.20 mm
+ACD: 2.22 mm
+LT: 5.33 mm
+WTW: 11.6 mm
+SE: 44.20 D
+ΔK: -0.53 D @ 135°
+TSE: 44.39 D
+ΔTK: -0.68 D @ 124°
+Alcon SA60WF/SN60WF
+K
+
+SD:0.01 D K1: 43.93 D @ 135°
+K2: 44.47 D @ 45°
+SD:0.05 D TK1: 44.05 D @ 124°
+TK2: 44.74 D @ 34°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.67
++22.50
+-0.33
++22.00
++0.01
++21.50
++0.35
++21.00
++20.50
++0.68
++21.52 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.73
++23.00
+-0.39
++22.50
+-0.06
++22.00
++0.27
++21.50
++21.00
++0.60
++21.91 Emmetropia
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.57
++22.00
+-0.23
++21.50
++0.10
++21.00
++0.43
++20.50
++20.00
++0.76
++21.15 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.64
++22.50
+-0.30
++22.00
++0.03
++21.50
++0.35
++21.00
++20.50
++0.68
++21.54 Emmetropia
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.64
++24.00
+-0.32
++23.50
++0.01
++23.00
++0.32
++22.50
++22.00
++0.64
++23.01 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.59
++22.00
+-0.25
++21.50
++0.10
++21.00
++0.43
++20.50
++20.00
++0.77
++21.14 Emmetropia
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.56
++23.50
+-0.24
++23.00
++0.08
++22.50
++0.39
++22.00
++21.50
++0.70
++22.63 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.84
++22.00
+-0.50
++21.50
+-0.15
++21.00
++0.19
++20.50
++20.00
++0.52
++20.78 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 6/30/2020 12:16; created by DO-0987651234
+
+Page 1 of 7
+
+Patient
+
+NORYNOUN PRECHA
+
+Date of birth
+Patient ID
+
+Physician
+
+3/17/1949
+40047600
+
+Dr.Naris
+
+Gender
+
+Male
+
+Operator
+
+Surgeon
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 4/4/2019
+4/4/2019
+Date of measurement:
+
+by:
+n:
+
+Surgeon
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+Mean corneal curvature of the right eye is -1.24 D higher than mean corneal curvature of the left eye. - Note: re-check measurement values.
+[OD] SRK® is a trademark of CTI (Computational Technology Inc.)
+[OS] SRK® is a trademark of CTI (Computational Technology Inc.)
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+4 µm
+SD:
+7 µm
+SD:
+SD: 11 µm
+
+AL: 23.34 mm
+ACD: 3.31 mm
+LT: 5.25 mm
+WTW: 12.2 mm
+SE: 44.12 D
+ΔK: -0.36 D @ 117°
+TSE: 43.98 D
+ΔTK: -0.58 D @ 106°
+AMO Tecnis 1 ZCB00
+K
+
+SD:0.01 D K1: 43.94 D @ 117°
+K2: 44.30 D @ 27°
+SD:0.02 D TK1: 43.69 D @ 106°
+TK2: 44.27 D @ 16°
+
+5 µm
+SD:
+4 µm
+SD:
+SD: 30 µm
+
+AL: 23.14 mm
+ACD: 3.58 mm
+LT: 4.76 mm
+WTW: 12.2 mm
+SE: 45.36 D
+ΔK: -0.32 D @ 56°
+TSE: 45.31 D
+ΔTK: -0.48 D @ 75°
+AMO Tecnis 1 ZCB00
+K
+
+SD:0.01 D K1: 45.20 D @ 56°
+K2: 45.52 D @ 146°
+SD:0.02 D TK1: 45.07 D @ 75°
+TK2: 45.55 D @ 165°
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.65
++22.50
+-0.31
++22.00
++0.02
++21.50
++0.35
++21.00
++20.50
++0.68
++21.53 Emmetropia
+
+K
+
+Alcon SN60WF
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.58
++22.00
+-0.24
++21.50
++0.10
++21.00
++0.43
++20.50
++20.00
++0.76
++21.15 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.76
++22.00
+-0.43
++21.50
+-0.10
++21.00
++0.22
++20.50
++20.00
++0.54
++20.84 Emmetropia
+
+K
+
+Alcon SN60WF
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.69
++21.50
+-0.35
++21.00
+-0.03
++20.50
++0.30
++20.00
++19.50
++0.62
++20.46 Emmetropia
+
+K
+
+Acriva BB UDM 611
+
+K
+
+Alcon Toric SN6AT(2-9)
+
+K
+
+Acriva BB UDM 611
+
+K
+
+Alcon Toric SN6AT(2-9)
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.85
++22.00
+-0.50
++21.50
+-0.15
++21.00
++0.19
++20.50
++20.00
++0.53
++20.78 Emmetropia
+
+- SRK®/T -
+A const.: 119.20
+Ref (D)
+IOL (D)
+-0.74
++22.50
+-0.40
++22.00
+-0.06
++21.50
++0.27
++21.00
++20.50
++0.60
++21.40 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.61
++21.00
+-0.27
++20.50
++0.06
++20.00
++0.39
++19.50
++19.00
++0.72
++20.09 Emmetropia
+
+- SRK®/T -
+A const.: 119.20
+Ref (D)
+IOL (D)
+-0.51
++21.50
+-0.19
++21.00
++0.14
++20.50
++0.46
++20.00
++19.50
++0.78
++20.71 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 4/4/2019 7:52 PM; created by Surgeon
+
+Page 1 of 7
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+Patient
+
+VATANYU PONGSOOK
+
+Date of birth
+Patient ID
+
+Physician
+
+9/20/1946
+39161932
+
+Gender
+
+Female
+
+Multifocal IOL
+
+Operator
+
+Surgeon
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 5/2/2019
+5/2/2019
+Date of measurement:
+
+by:
+n:
+
+Surgeon
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+[OD] SRK® is a trademark of CTI (Computational Technology Inc.)
+[OS] SRK® is a trademark of CTI (Computational Technology Inc.)
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+6 µm
+5 µm
+6 µm
+
+SD:
+SD:
+SD:
+
+AL: 22.47 mm
+ACD: 2.73 mm
+LT: 5.21 mm
+WTW: 11.9 mm
+SE: 43.72 D
+ΔK: -2.41 D @ 91°
+TSE: 43.83 D
+ΔTK: -2.49 D @ 91°
+K ZEISS AT LISA 809M (AT LISA
+
+SD:0.01 D K1: 42.55 D @ 91°
+K2: 44.96 D @ 1°
+SD:0.06 D TK1: 42.62 D @ 91°
+TK2: 45.11 D @ 1°
+
+4 µm
+SD:
+4 µm
+SD:
+SD: 17 µm
+
+AL: 22.59 mm
+ACD: 2.77 mm
+LT: 5.22 mm
+WTW: 11.9 mm
+SE: 44.00 D
+ΔK: -2.04 D @ 90°
+TSE: 44.07 D
+ΔTK: -2.25 D @ 90°
+K ZEISS AT LISA 809M (AT LISA
+
+SD:0.01 D K1: 43.01 D @ 90°
+K2: 45.04 D @ 180°
+SD:0.03 D TK1: 42.98 D @ 90°
+TK2: 45.23 D @ 180°
+
+366D)
+- SRK®/T -
+A const.: 118.00
+Ref (D)
+IOL (D)
+-0.83
++23.50
+-0.46
++23.00
+-0.09
++22.50
++0.27
++22.00
++21.50
++0.62
++22.37 Emmetropia
+
+K
+
+AMO Tecnis ZMB00
+
+- SRK®/T -
+A const.: 119.50
+Ref (D)
+IOL (D)
+-0.71
++25.50
+-0.37
++25.00
+-0.03
++24.50
++0.31
++24.00
++23.50
++0.64
++24.46 Emmetropia
+
+366D)
+- SRK®/T -
+A const.: 118.00
+Ref (D)
+IOL (D)
+-0.71
++24.00
+-0.34
++23.50
++0.03
++23.00
++0.39
++22.50
++22.00
++0.75
++23.04 Emmetropia
+
+K
+
+AMO Tecnis ZMB00
+
+- SRK®/T -
+A const.: 119.50
+Ref (D)
+IOL (D)
+-0.56
++26.00
+-0.22
++25.50
++0.12
++25.00
++0.46
++24.50
++24.00
++0.79
++25.18 Emmetropia
+
+K
+
+Alcon ReSTOR SN6AD1/3
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.75
++25.50
+-0.40
++25.00
+-0.04
++24.50
++0.30
++24.00
++23.50
++0.65
++24.44 Emmetropia
+
+K
+
+Acriva BB MFM611
+
+(Multifocal/Bifc)
+- SRK®/T -
+A const.: 118.30
+Ref (D)
+IOL (D)
+-0.89
++24.00
+-0.53
++23.50
+-0.17
++23.00
++0.19
++22.50
++22.00
++0.54
++22.76 Emmetropia
+
+(!) Borderline value
+Comment
+
+K
+
+Alcon ReSTOR SN6AD1/3
+
+K
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.54
++24.50
+-0.19
++24.00
++0.16
++23.50
++0.50
++23.00
++22.50
++0.84
++23.73 Emmetropia
+
+Acriva BB MFM611
+
+(Multifocal/Bifc)
+- SRK®/T -
+A const.: 118.30
+Ref (D)
+IOL (D)
+-0.77
++24.50
+-0.40
++24.00
+-0.04
++23.50
++0.32
++23.00
++22.50
++0.67
++23.45 Emmetropia
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 5/2/2019 6:46 PM; created by Surgeon
+
+Page 1 of 7
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+Patient
+
+JATURONGKAKUL TAWACHCHAI
+
+Date of birth
+Patient ID
+
+Physician
+
+10/5/1938
+41014492
+
+Monofocal
+
+Gender
+
+Male
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 11/13/2020
+11/13/2020
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+Please note the information on the following page.
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+SD: 11 µm
+5 µm
+SD:
+SD: 10 µm
+
+AL: 25.68 mm
+ACD: 3.10 mm
+LT: 5.05 mm
+WTW: 11.9 mm
+SE: 42.61 D
+ΔK: -2.97 D @ 89°
+TSE: 42.77 D
+ΔTK: -3.09 D @ 87°
+Alcon SA60WF/SN60WF
+K
+
+SD:0.01 D K1: 41.18 D @ 89°
+K2: 44.15 D @ 179°
+SD:0.02 D TK1: 41.28 D @ 87°
+TK2: 44.37 D @ 177°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+9 µm
+6 µm
+9 µm
+
+SD:
+SD:
+SD:
+
+AL: 25.14 mm
+ACD: 3.07 mm
+LT: 5.11 mm
+WTW: 11.8 mm
+SE: 41.79 D
+ΔK: -3.15 D @ 90°
+TSE: 41.90 D
+ΔTK: -3.28 D @ 91°
+Alcon SA60WF/SN60WF
+K
+
+SD:0.01 D K1: 40.28 D @ 90°
+K2: 43.42 D @ 180°
+SD:0.02 D TK1: 40.32 D @ 91°
+TK2: 43.61 D @ 1°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.67
++19.00
+-0.32
++18.50
++0.02
++18.00
++0.36
++17.50
++17.00
++0.69
++18.03 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.80
++19.50
+-0.45
++19.00
+-0.11
++18.50
++0.22
++18.00
++17.50
++0.55
++18.33 Emmetropia
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.69
++16.50
+-0.35
++16.00
+-0.02
++15.50
++0.31
++15.00
++14.50
++0.64
++15.47 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.51
++16.50
+-0.18
++16.00
++0.15
++15.50
++0.47
++15.00
++14.50
++0.79
++15.73 Emmetropia
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.54
++20.00
+-0.21
++19.50
++0.11
++19.00
++0.43
++18.50
++18.00
++0.75
++19.17 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.53
++18.50
+-0.18
++18.00
++0.16
++17.50
++0.50
++17.00
++16.50
++0.84
++17.74 Emmetropia
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.66
++17.50
+-0.34
++17.00
+-0.02
++16.50
++0.29
++16.00
++15.50
++0.60
++16.46 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.53
++16.00
+-0.19
++15.50
++0.15
++15.00
++0.48
++14.50
++14.00
++0.81
++15.22 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 11/13/2020 18:21; created by DO-0987651234
+
+Page 1 of 8
+
+Patient
+
+Khuentham, Tharinee
+
+Date of birth
+Patient ID
+
+Physician
+
+7/19/1946
+38081745
+
+Monofocal
+
+Gender
+
+Female
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+Date of calibration test: 7/6/2021
+7/6/2021
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+!
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+AL: 23.37 mm
+ACD: 3.28 mm
+LT: 4.55 mm
+WTW: 11.7 mm
+
+SD:
+SD:
+SD:
+
+7 µm
+5 µm
+6 µm
+
+SD: 0.02 D
+
+SE: 44.37 D
+ΔK: -0.97 D @113°
+TSE: 44.42 D
+ΔTK: -1.05 D @109°
+TK AMO Tecnis 1 ZCB00/ZCT00
+
+SD: 0.03 D
+
+TK
+
+Biometric values
+
+AL: 23.54 mm (!)
+
+ACD: 3.45 mm
+LT: 4.29 mm
+WTW: 11.7 mm
+
+SD:
+SD:
+SD:
+
+21 µm
+6 µm
+9 µm
+
+SD: 0.02 D
+
+SE: 44.27 D
+ΔK: -1.11 D @ 78°
+TSE: 44.35 D
+ΔTK: -1.21 D @ 80°
+TK AMO Tecnis 1 ZCB00/ZCT00
+
+SD: 0.03 D
+
+TK
+
+K1: 43.89 D @113°
+K2: 44.86 D @ 23°
+TK1: 43.90 D @109°
+TK2: 44.95 D @ 19°
+Alcon SA60WF/SN60WF
+
+- Barrett TK Universal II -
+
+LF: +1.88  DF: +5.0
+Ref (D)
+IOL (D)
+-0.54
++21.50
+-0.19
++21.00
++0.16
++20.50
++0.51
++20.00
++19.50
++0.85
++20.74 Emmetropia
+
+- Barrett TK Universal II -
+
+LF: +2.09  DF: +4.5
+Ref (D)
+IOL (D)
+-0.62
++21.50
+-0.27
++21.00
++0.07
++20.50
++0.41
++20.00
++19.50
++0.75
++20.61 Emmetropia
+
+K1: 43.72 D @ 78°
+K2: 44.83 D @168°
+TK1: 43.75 D @ 80°
+TK2: 44.96 D @170°
+Alcon SA60WF/SN60WF
+
+- Barrett TK Universal II -
+
+LF: +1.88  DF: +5.0
+Ref (D)
+IOL (D)
+-0.56
++21.00
+-0.20
++20.50
++0.14
++20.00
++0.49
++19.50
++19.00
++0.83
++20.21 Emmetropia
+
+- Barrett TK Universal II -
+
+LF: +2.09  DF: +4.5
+Ref (D)
+IOL (D)
+-0.59
++22.00
+-0.25
++21.50
++0.10
++21.00
++0.44
++20.50
++20.00
++0.78
++21.15 Emmetropia
+
+TK
+
+ZEISS CT LUCIA 611P/PY
+
+TK
+
+AMO Sensar AR40E
+
+TK
+
+ZEISS CT LUCIA 611P/PY
+
+TK
+
+AMO Sensar AR40E
+
+- Barrett TK Universal II -
+
+LF: +2.46  DF: +0.0
+Ref (D)
+IOL (D)
+-0.75
++23.00
+-0.41
++22.50
+-0.07
++22.00
++0.27
++21.50
++21.00
++0.59
++21.90 Emmetropia
+
+- Barrett TK Universal II -
+
+LF: +1.73  DF: +1.5
+Ref (D)
+IOL (D)
+-0.75
++21.50
+-0.39
++21.00
+-0.04
++20.50
++0.31
++20.00
++19.50
++0.66
++20.45 Emmetropia
+
+- Barrett TK Universal II -
+
+LF: +2.46  DF: +0.0
+Ref (D)
+IOL (D)
+-0.79
++22.50
+-0.44
++22.00
+-0.11
++21.50
++0.22
++21.00
++20.50
++0.55
++21.34 Emmetropia
+
+- Barrett TK Universal II -
+
+LF: +1.73  DF: +1.5
+Ref (D)
+IOL (D)
+-0.76
++21.00
+-0.40
++20.50
+-0.05
++20.00
++0.30
++19.50
++19.00
++0.65
++19.93 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.90.12.05
+
+Report dated 7/6/2021 18:44; created by DO-0987651234
+
+Page 1 of 7
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+Patient
+
+Yamakarattanaporn, Phairoj
+
+Date of birth
+Patient ID
+
+Physician
+
+8/24/1965
+50131244
+
+Monofocal
+
+Gender
+
+Male
+
+Operator
+
+DO-0987651234
+
+UZeiss
+EYE Siriraj
+
+Date of calibration test: 5/25/2021
+5/25/2021
+Date of measurement:
+
+by:
+n:
+
+DO-0987651234
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+!
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: +0.00 D
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+AL: 23.93 mm
+ACD: 2.87 mm
+LT: 4.61 mm
+WTW: 12.3 mm
+
+SD:
+SD:
+SD:
+
+5 µm
+2 µm
+5 µm
+
+Biometric values
+
+AL: 23.73 mm
+ACD: 2.95 mm
+LT: 4.63 mm
+WTW: 11.7 mm
+
+SD:
+SD:
+SD:
+
+6 µm
+3 µm
+5 µm
+
+SE: 43.54 D
+ΔK: -0.86 D @167°
+TSE: 43.55 D
+ΔTK: -0.74 D @166°
+Alcon SA60WF/SN60WF
+K
+
+SD: 0.04 D
+
+SD: 0.09 D
+
+K1: 43.12 D @167°
+K2: 43.98 D @ 77°
+TK1: 43.18 D @166°
+TK2: 43.92 D @ 76°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+SE: 43.60 D
+ΔK: -0.71 D @ 38°
+TSE: 43.60 D
+ΔTK: -0.71 D @ 43°
+Alcon SA60WF/SN60WF
+K
+
+SD: 0.01 D
+
+SD: 0.01 D
+
+K1: 43.24 D @ 38°
+K2: 43.96 D @128°
+TK1: 43.25 D @ 43°
+TK2: 43.96 D @133°
+K AMO Tecnis 1 ZCB00/ZCT00
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.72
++21.00
+-0.38
++20.50
+-0.04
++20.00
++0.29
++19.50
++19.00
++0.62
++19.93 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.81
++21.50
+-0.47
++21.00
+-0.14
++20.50
++0.19
++20.00
++19.50
++0.51
++20.29 Emmetropia
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.70
++21.50
+-0.36
++21.00
+-0.02
++20.50
++0.32
++20.00
++19.50
++0.65
++20.47 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.78
++22.00
+-0.44
++21.50
+-0.11
++21.00
++0.22
++20.50
++20.00
++0.55
++20.84 Emmetropia
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+K
+
+ZEISS CT LUCIA 611P/PY
+
+K
+
+AMO Sensar AR40E
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.78
++22.50
+-0.46
++22.00
+-0.14
++21.50
++0.18
++21.00
++20.50
++0.49
++21.28 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.63
++20.50
+-0.28
++20.00
++0.06
++19.50
++0.40
++19.00
++18.50
++0.73
++19.59 Emmetropia
+
+- SRK®/T -
+A const.: 120.10
+Ref (D)
+IOL (D)
+-0.74
++23.00
+-0.41
++22.50
+-0.09
++22.00
++0.23
++21.50
++21.00
++0.54
++21.86 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.61
++21.00
+-0.26
++20.50
++0.08
++20.00
++0.42
++19.50
++19.00
++0.75
++20.12 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.90.12.05
+
+Report dated 5/25/2021 18:00; created by DO-0987651234
+
+Page 1 of 7
+
+Patient
+
+Sisuwan Winai
+
+Date of birth
+Patient ID
+
+Physician
+
+9/3/1959
+53228247
+
+Dr.Naris
+
+Gender
+
+Male
+
+Operator
+
+Surgeon
+
+UZeiss
+EYE Siriraj
+
+!
+
+Date of calibration test: 2/22/2019
+2/22/2019
+Date of measurement:
+
+by:
+n:
+
+Surgeon
+1.3375
+
+Result:
+CVD:
+
+OK
+12.00 mm
+
+[OD] SRK® is a trademark of CTI (Computational Technology Inc.)
+[OS] SRK® is a trademark of CTI (Computational Technology Inc.)
+
+OD
+
+right
+
+IOL calculation
+
+OS
+
+left
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Eye status
+
+LS: Phakic
+Ref: ---
+LVC: Untreated
+Target ref.: plano
+
+VS: Vitreous body
+
+VA: ---
+
+SIA: +0.00 D @ 0°
+
+LVC mode: -
+
+Biometric values
+
+6 µm
+SD:
+5 µm
+SD:
+SD: 10 µm
+
+AL: 24.50 mm
+ACD: 2.64 mm
+LT: 4.96 mm
+WTW: 12.8 mm
+SE: 41.75 D
+ΔK: -0.22 D @ 33°
+TSE: 41.93 D
+ΔTK: -0.18 D @ 46°
+AMO Tecnis 1 ZCB00
+K
+
+SD:0.01 D K1: 41.64 D @ 33°
+K2: 41.86 D @ 123°
+SD:0.01 D TK1: 41.84 D @ 46°
+TK2: 42.02 D @ 136°
+
+5 µm
+SD:
+4 µm
+SD:
+SD: 13 µm
+
+AL: 24.45 mm
+ACD: 2.83 mm
+LT: 5.01 mm
+WTW: 12.8 mm
+SE: 41.65 D
+ΔK: -0.20 D @ 107°
+TSE: 41.74 D
+ΔTK: -0.39 D @ 105°
+AMO Tecnis 1 ZCB00
+K
+
+SD:0.01 D K1: 41.55 D @ 107°
+K2: 41.75 D @ 17°
+SD:0.04 D TK1: 41.55 D @ 105°
+TK2: 41.94 D @ 15°
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.75
++21.50
+-0.40
++21.00
+-0.06
++20.50
++0.28
++20.00
++19.50
++0.62
++20.41 Emmetropia
+
+K
+
+Alcon SN60WF
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.65
++21.00
+-0.30
++20.50
++0.05
++20.00
++0.39
++19.50
++19.00
++0.73
++20.07 Emmetropia
+
+- SRK®/T -
+A const.: 119.30
+Ref (D)
+IOL (D)
+-0.55
++21.50
+-0.21
++21.00
++0.13
++20.50
++0.47
++20.00
++19.50
++0.81
++20.70 Emmetropia
+
+K
+
+Alcon SN60WF
+
+- SRK®/T -
+A const.: 119.00
+Ref (D)
+IOL (D)
+-0.81
++21.50
+-0.45
++21.00
+-0.10
++20.50
++0.24
++20.00
++19.50
++0.58
++20.35 Emmetropia
+
+K
+
+Acriva BB UDM 611
+
+K
+
+Alcon Toric SN6AT(2-9)
+
+K
+
+Acriva BB UDM 611
+
+K
+
+Alcon Toric SN6AT(2-9)
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.54
++20.50
+-0.18
++20.00
++0.17
++19.50
++0.52
++19.00
++18.50
++0.86
++19.74 Emmetropia
+
+- SRK®/T -
+A const.: 119.20
+Ref (D)
+IOL (D)
+-0.83
++21.50
+-0.48
++21.00
+-0.14
++20.50
++0.20
++20.00
++19.50
++0.54
++20.30 Emmetropia
+
+- SRK®/T -
+A const.: 118.70
+Ref (D)
+IOL (D)
+-0.70
++21.00
+-0.34
++20.50
++0.01
++20.00
++0.36
++19.50
++19.00
++0.71
++20.02 Emmetropia
+
+- SRK®/T -
+A const.: 119.20
+Ref (D)
+IOL (D)
+-0.64
++21.50
+-0.29
++21.00
++0.06
++20.50
++0.40
++20.00
++19.50
++0.73
++20.58 Emmetropia
+
+(!) Borderline value
+Comment
+
+(*) Value was edited manually
+
+--- No value measured
+
+Signature
+
+IOLMaster 700
+
+Version 1.80.10.61129
+
+Report dated 2/22/2019 5:26 PM; created by Surgeon
+
+Page 1 of 7
+
+ 
+
+d
+e
+ 
+v
+ 
+r
+ 
+e
+ 
+s
+ 
+e
+ 
+r
+ 
+ 
+ 
+s
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+ 
+ 
+l
+ 
+l
+ 
+
+A
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+2
+1
+0
+2
+
+ 
+
+ 
+ 
+ 
+t
+ 
+
+ 
+
+h
+g
+
+ 
+i
+ 
+r
+ 
+y
+ 
+p
+o
+C
+
+ 
+
+ 
+
+ 
+ 
+-
+ 
+ 
+|
+ 
+ 
+
+2
+1
+0
+2
+5
+0
+
+/
+
+ 
+ 
+ 
+
+.
+
+1
+0
+
+ 
+ 
+
+ 
+
+n
+o
+
+ 
+i
+ 
+s
+ 
+r
+ 
+e
+V
+
+ 
+
+ 
+ 
+ 
+
+e
+
+ 
+t
+ 
+
+a
+
+ 
+l
+ 
+p
+ 
+m
+ 
+e
+ 
+T
+
+ 
+ 
+|
+ 
+ 
+
+ 
+
+S
+S
+
+ 
+I
+ 
+
+E
+Z
+
+ 
+
+
