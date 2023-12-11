@@ -1,3 +1,0 @@
-#Show PDF file
-https://discuss.streamlit.io/t/pdf-viewer-how-to-achieve-reactive-layout/46283 
-
