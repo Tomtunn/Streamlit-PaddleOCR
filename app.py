@@ -81,12 +81,12 @@ st.set_page_config(
 )
 
 # Local path to the logo image
-logo_path = r'C:\Users\Asus\Vs code\WEB APP_OCR\logo.png'  
-# Open the logo image
-logo_image = Image.open(logo_path)
+# logo_path = r'C:/Users/Asus/Vs code/WEB APP_OCR/logo.png'  
+# # Open the logo image
+# logo_image = Image.open(logo_path)
 
 # Display the logo in the sidebar
-st.sidebar.image(logo_image,  caption='BheeBuaPoonTongEarth', use_column_width=True)
+# st.sidebar.image(logo_image,  caption='BheeBuaPoonTongEarth', use_column_width=True)
 
 st.sidebar.success("OCR WebApp")
 st.title("OCR for Ophthalmology Document")
