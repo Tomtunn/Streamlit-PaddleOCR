@@ -77,7 +77,10 @@ if selected_option == "Manual labelling":
 
     if file is not None: 
         st.write(f"You have uploaded {len(file)} file(s).")
-        for uploaded_file in file:
+        
+        annotated_images_list = []  # List to store annotated images
+
+        for index, uploaded_file in enumerate(file):
             # Annotation on the uploaded image
             if uploaded_file.type.startswith('image'):
                 image = Image.open(uploaded_file)
@@ -90,50 +93,37 @@ if selected_option == "Manual labelling":
                     update_streamlit=True,
                     height=image.size[1],
                     drawing_mode="rect",
-                    key="canvas",
+                    key=f"canvas_{index}",  # Make the key unique
                     width=image.size[0],
                 )
 
-                if st.button("Confirm this region"):
+                confirmation_button_key = f"confirmation_button_{index}"
+
+                if st.button("Confirm this region", key=confirmation_button_key):
                     boxes = canvas_result.json_data["objects"]
                     annotated_images, annotated_arrays = capture_annotated_region(image, boxes)
+                    annotated_images_list.extend(annotated_images)  # Add annotated images to the list
 
-                    for i, annotated_image in enumerate(annotated_images):
-                        st.image(annotated_image, caption=f"Captured Image {i + 1}", use_column_width=False)
+        # Display all annotated images
+        for i, annotated_image in enumerate(annotated_images_list):
+            st.image(annotated_image, caption=f"Captured Image {i + 1}", use_column_width=False)
                         
-                        st.text(f"Array of Captured Image {i + 1}:\n{str(annotated_arrays[i].tolist())}")
+            st.text(f"Array of Captured Image {i + 1}:\n{str(annotated_arrays[i].tolist())}")
 
             # Show converted image from PDF file        
-            elif uploaded_file.type == "application/pdf":
-                doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
-                page_number = 0
+            for uploaded_file.type in file:
+                 if uploaded_file.type == "application/pdf":
+                    doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
+                    page_number = 0
 
-                show_image(st.session_state.page_number)
-                print(st.session_state.page_number)
+                    show_image(st.session_state.page_number)
+                    print(st.session_state.page_number)
 
-                if st.sidebar.button("Next Page", on_click=next_page):
-                    print("Next Page", st.session_state.page_number)
+                    next_button_key = f"next_page_button_{index}"
+                    previous_button_key = f"previous_page_button_{index}"
 
-                if st.sidebar.button("Previous Page", on_click=previous_page):
+                    if st.sidebar.button(f"Next Page {index}", key=next_button_key):
+                        print("Next Page", st.session_state.page_number)
 
-                    print("Previous Page", st.session_state.page_number)
-         
-
-##################              
-## Auto-extraction ##   
-##################       
-elif selected_option == "Auto-extraction":
-    st.write("Please upload only PDF file")
-    file = st.file_uploader("Upload a file:", type=["pdf"], accept_multiple_files=True)
-   
-    if file is not None and len(file) > 0:
-        st.write(f"You have uploaded {len(file)} file(s).")
-        file = file[0]
-        if file.type != "application/pdf":
-            st.error("This file type is not available for auto-extraction. Please upload a PDF file.")
-        else:
-            displayPDF(file)   
-
-            if st.button("Perform OCR"):
-                # OCR process algorithm
-                st.text("OCR processing completed")
+                    if st.sidebar.button(f"Previous Page {index}", key=previous_button_key):
+                        print("Previous Page", st.session_state.page_number)
