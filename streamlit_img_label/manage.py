@@ -2,7 +2,7 @@ import os
 import re
 import numpy as np
 from PIL import Image
-from .annotation import read_xml, output_json
+from .annotation import output_json, read_json
 
 """
 .. module:: streamlit_img_label
@@ -24,16 +24,19 @@ class ImageManager:
         self._filename = filename
         self._img = Image.open(filename)
         self._rects = []
-        # self._load_rects()
         self._resized_ratio_w = 1
         self._resized_ratio_h = 1
         self._json_file_path = json_file_path
         self._template = selected_template
+        self._load_rects()
 
-    # def _load_rects(self):
-    #     rects_xml = read_xml(self._filename)
-    #     if rects_xml:
-    #         self._rects = rects_xml
+    def _load_rects(self):
+        rects_json = read_json(self._json_file_path, self._template)
+        if rects_json:
+            self._rects = rects_json
+        # rects_xml = read_xml(self._filename)
+        # if rects_xml:
+        #     self._rects = rects_xml
 
     def get_img(self):
         """get the image object
@@ -84,6 +87,12 @@ class ImageManager:
         resized_rect["height"] = rect["height"] / self._resized_ratio_h
         if "label" in rect:
             resized_rect["label"] = rect["label"]
+        elif "label" not in rect:
+            resized_rect["label"] = ""
+        if "id" in rect:
+            resized_rect["id"] = rect["id"]
+        elif "id" not in rect:
+            resized_rect["id"] = ""
         return resized_rect
 
     def get_resized_rects(self):
@@ -115,7 +124,13 @@ class ImageManager:
         label = ""
         if "label" in rect:
             label = rect["label"]
-        return (Image.fromarray(prev_img), label)
+        elif "label" not in rect:
+            label = ""
+        if "id" in rect:
+            img_id = rect["id"]
+        elif "id" not in rect:
+            img_id = ""
+        return (Image.fromarray(prev_img), label, img_id)
 
     def init_annotation(self, rects):
         """init annotation for current rects.
@@ -128,7 +143,7 @@ class ImageManager:
         self._current_rects = rects
         return [self._chop_box_img(rect) for rect in self._current_rects]
 
-    def set_annotation(self, index, label, select_label):
+    def set_annotation(self, index, label, select_id):
         """set the label of the image.
 
         Args:
@@ -136,7 +151,7 @@ class ImageManager:
             label(str): the label of the bounding box
         """
         self._current_rects[index]["label"] = label
-        self._current_rects[index]["id"] = select_label
+        self._current_rects[index]["id"] = select_id
 
     def save_annotation(self):
         # """output the xml annotation file."""

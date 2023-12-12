@@ -10,36 +10,64 @@ from xml.etree import ElementTree as ET
 """
 
 
-def read_xml(img_file):
-    """read_xml
-    Read the xml annotation file and extract the bounding boxes if exists.
+# def read_xml(img_file):
+#     """read_xml
+#     Read the xml annotation file and extract the bounding boxes if exists.
 
-    Args:
-        img_file(str): the image file.
-    Returns:
-        rects(list): the bounding boxes of the image.
-    """
-    file_name = img_file.split(".")[0]
-    if not os.path.isfile(f"{file_name}.xml"):
+#     Args:
+#         img_file(str): the image file.
+#     Returns:
+#         rects(list): the bounding boxes of the image.
+#     """
+#     file_name = img_file.split(".")[0]
+#     if not os.path.isfile(f"{file_name}.xml"):
+#         return []
+#     tree = ET.parse(f"{file_name}.xml")
+#     root = tree.getroot()
+
+#     rects = []
+
+#     for boxes in root.iter("object"):
+#         label = boxes.find("name").text
+#         ymin = int(boxes.find("bndbox/ymin").text)
+#         xmin = int(boxes.find("bndbox/xmin").text)
+#         ymax = int(boxes.find("bndbox/ymax").text)
+#         xmax = int(boxes.find("bndbox/xmax").text)
+#         rects.append(
+#             {
+#                 "left": xmin,
+#                 "top": ymin,
+#                 "width": xmax - xmin,
+#                 "height": ymax - ymin,
+#                 "label": label,
+#             }
+#         )
+#     return rects
+
+def read_json(json_file_path, template_name):
+    if not os.path.isfile(json_file_path):
         return []
-    tree = ET.parse(f"{file_name}.xml")
-    root = tree.getroot()
-
+    with open(json_file_path) as f:
+        template_dict = json.load(f)
+    if template_name not in template_dict.keys():
+        return []
+    boxes_template = template_dict[template_name]
     rects = []
-
-    for boxes in root.iter("object"):
-        label = boxes.find("name").text
-        ymin = int(boxes.find("bndbox/ymin").text)
-        xmin = int(boxes.find("bndbox/xmin").text)
-        ymax = int(boxes.find("bndbox/ymax").text)
-        xmax = int(boxes.find("bndbox/xmax").text)
+    for boxes in boxes_template:
+        type_output = boxes["type"]
+        type_id = boxes["id"]
+        xmin = boxes["box_pos"][0]
+        ymin = boxes["box_pos"][1]
+        xmax = boxes["box_pos"][2]
+        ymax = boxes["box_pos"][3]
         rects.append(
             {
                 "left": xmin,
                 "top": ymin,
                 "width": xmax - xmin,
                 "height": ymax - ymin,
-                "label": label,
+                "label": type_output,
+                "id": type_id
             }
         )
     return rects
