@@ -4,6 +4,7 @@ import pandas as pd
 from tablepyxl import tablepyxl
 from copy import deepcopy
 import io
+import numpy as np
 
 def load_model():
     """
@@ -75,9 +76,10 @@ def inference(data_input, engine):
     df_predict_ls = []
     for page_index in range(len(data_input)):
         page = data_input[page_index]
-        image_path = page['path']
-        image = cv2.imread(image_path)
-        
+        # image_path = page['path']
+        # image = cv2.imread(image_path)
+        image = page['image']
+        image = np.asarray(image)
         for box_index in range(len(page['template_name'])):
             x1, y1, x2, y2 = page['template_name'][box_index]['box_pos']
             roi_image = image[y1:y2, x1:x2]
@@ -85,5 +87,6 @@ def inference(data_input, engine):
             df_predict = process_result(result)
             columns_ls = [page['template_name'][box_index]['id']] * (len(df_predict.columns))
             df_predict.columns = columns_ls
-            df_predict_ls.append(df_predict)     
+            df_predict_ls.append(df_predict)
+            
     return pd.concat(df_predict_ls, axis=1)
