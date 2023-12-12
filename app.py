@@ -127,3 +127,22 @@ if selected_option == "Manual labelling":
 
                     if st.sidebar.button(f"Previous Page {index}", key=previous_button_key):
                         print("Previous Page", st.session_state.page_number)
+
+##################              
+## Auto-extraction ##   
+##################       
+elif selected_option == "Auto-extraction":
+    st.write("Please upload only PDF file")
+    file = st.file_uploader("Upload a file:", type=["pdf"], accept_multiple_files=True)
+   
+    if file is not None and len(file) > 0:
+        st.write(f"You have uploaded {len(file)} file(s).")
+        file = file[0]
+        if file.type != "application/pdf":
+            st.error("This file type is not available for auto-extraction. Please upload a PDF file.")
+        else:
+            displayPDF(file)   
+
+            if st.button("Perform OCR"):
+                # OCR process algorithm
+                st.text("OCR processing completed")
