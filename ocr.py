@@ -6,7 +6,7 @@ from copy import deepcopy
 import io
 import numpy as np
 
-def load_model(image_orientation=True):
+def load_model(image_orientation=False):
     """
     load model from paddleocr (PPStructure)
 
