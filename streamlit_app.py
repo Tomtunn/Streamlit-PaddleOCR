@@ -13,9 +13,9 @@ import os
 from streamlit_img_label import st_img_label
 from streamlit_img_label.manage import ImageManager, ImageDirManager
 
-json_template_path = "D:/tong/BME/y4_1/image/code/ocr/EGBI_433_image_processing/template_file.json"
+json_template_path = "template_file.json"
 
-def show_image(doc, page_number):
+def read_image(doc, page_number):
     pdf_page = doc[page_number]
     pix = pdf_page.get_pixmap(dpi=300)
     pdf_data = io.BytesIO(pix.pil_tobytes(format='jpeg'))
@@ -74,13 +74,24 @@ def run(img_dir, data_type):
         st.session_state["image_index"] = file_index
 
     # Sidebar: show status
-    n_files = len(st.session_state["files"])
-    n_annotate_files = len(st.session_state["annotation_files"])
-    st.sidebar.write("Total files:", n_files)
-    st.sidebar.write("Total annotate files:", n_annotate_files)
-    st.sidebar.write("Remaining files:", n_files - n_annotate_files)
+    # n_files = len(st.session_state["files"])
+    # n_annotate_files = len(st.session_state["annotation_files"])
+    # st.sidebar.write("Total files:", n_files)
+    # st.sidebar.write("Total annotate files:", n_annotate_files)
+    # st.sidebar.write("Remaining files:", n_files - n_annotate_files)
+    
+
     options = ["Manual labelling", "Auto-extraction"]
-    selected_option = st.radio("Select an option:", options)
+    selected_option = st.sidebar.radio("Select an option:", options)
+
+    if selected_option == "Manual labelling":
+        selected_template = st.sidebar.text_input("Input template", "")
+
+    if selected_option == "Auto-extraction":
+        with open(json_template_path) as f:
+            template_dict = json.load(f)
+        selected_template = st.sidebar.selectbox("Select the template:", list(template_dict.keys()))
+
 
     # st.sidebar.selectbox(
     #     "Files",
@@ -89,66 +100,64 @@ def run(img_dir, data_type):
     #     on_change=go_to_image,
     #     key="file",
     # )
-    with open(json_template_path) as f:
-        template_dict = json.load(f)
-    selected_template = st.text_input("input template", "")
 
+    file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=True)
     
-    
-
     # Main content: annotate images
     if 'page_number' not in st.session_state:
         st.session_state.page_number = 0
 
-    if selected_option == "Manual labelling":
-        file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=True)
-        for uploaded_file in file:
-            if uploaded_file.type == "application/pdf":
-                doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
-                # page_number = 0
-                pdf_data = show_image(doc, st.session_state.page_number)
-                # col1, col2 = st.columns(2)
-                # with col1:
-                #     st.button(label="Previous image", on_click=previous_image)
-                # with col2:
-                #     st.button(label="Next image", on_click=next_image)
+    for uploaded_file in file:
+        if uploaded_file.type == "application/pdf":
+            doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
+            # page_number = 0
+            pdf_data = read_image(doc, st.session_state.page_number)
+            # col1, col2 = st.columns(2)
+            # with col1:
+            #     st.button(label="Previous image", on_click=previous_image)
+            # with col2:
+            #     st.button(label="Next image", on_click=next_image)
 
-            # img_file_name = idm.get_image(st.session_state["image_index"])
-            # img_path = os.path.join(img_dir, img_file_name)
-                im = ImageManager(pdf_data, json_template_path, selected_template)
-                img = im.get_img()
-                resized_img = im.resizing_img()
-                resized_rects = im.get_resized_rects()
-                rects = st_img_label(resized_img, box_color="red", rects=resized_rects)
-                
+        # img_file_name = idm.get_image(st.session_state["image_index"])
+        # img_path = os.path.join(img_dir, img_file_name)
+            
+            im = ImageManager(pdf_data, json_template_path, selected_template)
+            img = im.get_img()
+            resized_img = im.resizing_img()
+            resized_rects = im.get_resized_rects()
+            rects = st_img_label(resized_img, box_color="red", rects=resized_rects)
 
-            def annotate():
-                im.save_annotation()
-                # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
-                # if image_annotate_file_name not in st.session_state["annotation_files"]:
-                    # st.session_state["annotation_files"].append(image_annotate_file_name)
-                next_annotate_file()
+        def annotate():
+            im.save_annotation()
+            # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
+            # if image_annotate_file_name not in st.session_state["annotation_files"]:
+                # st.session_state["annotation_files"].append(image_annotate_file_name)
+            next_annotate_file()
 
-            if rects:
-                st.button(label="Save", on_click=annotate)
-                preview_imgs = im.init_annotation(rects)
+        if rects:
+            st.button(label="Save", on_click=annotate)
+            preview_imgs = im.init_annotation(rects)
 
-                for i, prev_img in enumerate(preview_imgs):
-                    prev_img[0].thumbnail((200, 200))
-                    col1, col2 = st.columns(2)
-                    with col1:
-                        col1.image(prev_img[0])
-                    with col2:
-                        default_index = 0
-                        if prev_img[1]:
-                            default_index = data_type.index(prev_img[1])
+            for i, prev_img in enumerate(preview_imgs):
+                prev_img[0].thumbnail((200, 200))
+                col1, col2 = st.columns(2)
+                with col1:
+                    col1.image(prev_img[0])
+                with col2:
+                    default_index = 0
+                    if prev_img[1]:
+                        default_index = data_type.index(prev_img[1])
+                    if prev_img[2]:
+                        img_id = prev_img[2]
+                    elif not prev_img[2]:
+                        img_id = ""
+                    
+                    select_type = col2.selectbox(
+                        "output_type", data_type, key=f"type_{i}", index=default_index
+                    )
+                    select_id = col2.text_input('col_name', img_id, key=f"label_{i}")
+                    im.set_annotation(i, select_type, select_id)
 
-                        select_type = col2.selectbox(
-                            "output_type", data_type, key=f"type_{i}", index=default_index
-                        )
-                        select_label = col2.text_input('col_name', '', key=f"label_{i}")
-                        im.set_annotation(i, select_type, select_label)
-    
 
 if __name__ == "__main__":
     data_types = ["table", "image"]
