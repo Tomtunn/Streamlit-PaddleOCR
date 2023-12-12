@@ -6,14 +6,14 @@ from copy import deepcopy
 import io
 import numpy as np
 
-def load_model(image_orientation=False):
+def load_model():
     """
     load model from paddleocr (PPStructure)
 
     Returns:
         tabular engine model
     """
-    table_engine = PPStructure(recovery=True, lang='en',image_orientation=image_orientation)
+    table_engine = PPStructure(recovery=True, lang='en')
     return table_engine
 
 def predict(table_engine, image):
