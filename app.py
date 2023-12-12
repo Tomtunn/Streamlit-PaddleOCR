@@ -50,9 +50,17 @@ def capture_annotated_region(image, boxes):
 
 ##################
 
+def show_image(page_number):
+    pdf_page = doc[page_number]
+    pix = pdf_page.get_pixmap(dpi=300)
+    image = Image.open(io.BytesIO(pix.pil_tobytes(format='jpeg')))
+    st.image(image, caption=f"Page {page_number}", use_column_width=True)
 
+def next_page():
+    st.session_state.page_number += 1
 
-
+def previous_page():
+    st.session_state.page_number -= 1
 
 ##################
 ## Manual labelling ##
@@ -70,7 +78,6 @@ if selected_option == "Manual labelling":
     if file is not None: 
         st.write(f"You have uploaded {len(file)} file(s).")
         for uploaded_file in file:
-
             # Annotation on the uploaded image
             if uploaded_file.type.startswith('image'):
                 image = Image.open(uploaded_file)
@@ -101,22 +108,16 @@ if selected_option == "Manual labelling":
                 doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
                 page_number = 0
 
-                def show_image(page_number):
-                    pdf_page = doc[page_number]
-                    pix = pdf_page.get_pixmap(dpi=300)
-                    image = Image.open(io.BytesIO(pix.pil_tobytes(format='jpeg')))
-                    st.image(image, caption=f"Page {page_number + 1}", use_column_width=True)
                 show_image(st.session_state.page_number)
+                print(st.session_state.page_number)
 
-                if st.button("Previous Page") and st.session_state.page_number > 0:
-                    st.session_state.page_number -= 1
-                    show_image(st.session_state.page_number)
+                if st.sidebar.button("Next Page", on_click=next_page):
+                    print("Next Page", st.session_state.page_number)
 
-                if st.button("Next Page") and st.session_state.page_number < len(doc) - 1:
-                    st.session_state.page_number += 1
-                    show_image(st.session_state.page_number)
+                if st.sidebar.button("Previous Page", on_click=previous_page):
 
-                
+                    print("Previous Page", st.session_state.page_number)
+         
 
 ##################              
 ## Auto-extraction ##   
