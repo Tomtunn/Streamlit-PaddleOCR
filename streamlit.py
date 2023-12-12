@@ -1,16 +1,14 @@
 import streamlit as st
 import numpy as np
-import json
 import base64
-import os
+import io
 from streamlit_drawable_canvas import st_canvas
 from PIL import Image, ImageDraw
-from pdf2image import convert_from_bytes, convert_from_path
+import fitz
 
 ##################
-# Page Interface
-poppler_path = r'C:/Users/user/Desktop/EGBI_433_image_processing/Release-23.11.0-0/poppler-23.11.0/Library/bin'
-
+## Page Interface ##
+##################
 st.set_page_config(
     page_title="OCR Web App",
     page_icon="🧊",
@@ -57,9 +55,12 @@ def capture_annotated_region(image, boxes):
 
 
 ##################
-
-
+## Manual labelling ##
+##################
 # If select manual labelling, come to this part
+
+# Function for next and previous page
+
 if selected_option == "Manual labelling":
     st.write("Please upload PDF, PNG, or JPG file")
     file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=True)
@@ -95,46 +96,20 @@ if selected_option == "Manual labelling":
 
             # Annotation on the converted PDF image         
             elif uploaded_file.type == "application/pdf":
-                pdf_images = convert_from_bytes(uploaded_file.read(), poppler_path=poppler_path)  
-                for i, pdf_image in enumerate(pdf_images):
-                   
-                    st.sidebar.selectbox("Select type of annotation:",["Image", "Text"])
-                    st.subheader(f"Page {i + 1}: Please draw an annotation box")
-                    #Show image for annotation
-                    canvas_result = st_canvas(
-                        fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
-                        stroke_width=2,
-                        stroke_color="red",
-                        background_image=pdf_image,
-                        update_streamlit=True,
-                        height=792,
-                        drawing_mode="rect",
-                        key=f"canvas_page_{i}",
-                        width=612,
-                    )
+                doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
+                for i in range(doc.page_count):
+                        pdf_page = doc[i]
+                        pix = pdf_page.get_pixmap(dpi=300)
+                        image = Image.open(io.BytesIO(pix.pil_tobytes(format='jpeg')))
+                        st.image(image, caption=f"Page {i + 1}", use_column_width=True)
 
-                    if st.button(f"Confirm annotations for Page {i + 1}"):
-                        boxes = canvas_result.json_data["objects"]
-                        annotated_images, annotated_arrays = capture_annotated_region(pdf_image, boxes)
-
-                        for j, annotated_image in enumerate(annotated_images):
-                            st.text(f"Array of Captured Image {j + 1}:\n{str(annotated_arrays[j].tolist())}")
-
-##################                 
-
-
-
-
-# Auto-extraction function
-
+##################              
+## Auto-extraction ##   
+##################       
 elif selected_option == "Auto-extraction":
     st.write("Please upload only PDF file")
     file = st.file_uploader("Upload a file:", type=["pdf"], accept_multiple_files=True)
    
-   # Template selection for auto-extraction after create the template
-    template_files = [file for file in os.listdir() if file.endswith(".json")]
-    selected_template = st.selectbox("Select a template:", template_files, key="template_selection")
-
     if file is not None and len(file) > 0:
         st.write(f"You have uploaded {len(file)} file(s).")
         file = file[0]
@@ -142,6 +117,7 @@ elif selected_option == "Auto-extraction":
             st.error("This file type is not available for auto-extraction. Please upload a PDF file.")
         else:
             displayPDF(file)   
-            # Perform the OCR after select the template
+
             if st.button("Perform OCR"):
-                st.text("OCR processing completed") 
+                # OCR process algorithm
+                st.text("OCR processing completed")
