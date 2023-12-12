@@ -5,7 +5,7 @@ import io
 from streamlit_drawable_canvas import st_canvas
 from PIL import Image
 import fitz
-
+ 
 # Function for display PDF file within the scaled pdf viewer
 def displayPDF(uploaded_file):
     bytes_data = uploaded_file.getvalue()
@@ -75,13 +75,21 @@ def show_image(page_number, files):
 # Page Interface
 st.set_page_config(
     page_title="OCR Web App",
-    page_icon="🧊",
+    page_icon="👀",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
+# Local path to the logo image
+logo_path = r'C:\Users\Asus\Vs code\WEB APP_OCR\logo.png'  
+# Open the logo image
+logo_image = Image.open(logo_path)
+
+# Display the logo in the sidebar
+st.sidebar.image(logo_image,  caption='BheeBuaPoonTongEarth', use_column_width=True)
+
 st.sidebar.success("OCR WebApp")
-st.title("OCR for Ophthalmology document")
+st.title("OCR for Ophthalmology Document")
 st.subheader("You can easily upload Ophthalmology test document for Optical character recognition (OCR) here.")
 st.subheader("Please select your extraction method")
 
