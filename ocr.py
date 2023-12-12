@@ -6,14 +6,14 @@ from copy import deepcopy
 import io
 import numpy as np
 
-def load_model():
+def load_model(image_orientation=True):
     """
     load model from paddleocr (PPStructure)
 
     Returns:
         tabular engine model
     """
-    table_engine = PPStructure(recovery=True, lang='en')
+    table_engine = PPStructure(recovery=True, lang='en',image_orientation=image_orientation)
     return table_engine
 
 def predict(table_engine, image):
@@ -59,8 +59,10 @@ def process_result(result):
                 text_ls.append(text['text'])
             df = pd.DataFrame(text_ls)
             df_ls.append(df)
-            
-    return pd.concat(df_ls, axis=0) 
+    if len(df_ls) == 0:
+        return pd.DataFrame()
+    else:    
+        return pd.concat(df_ls, axis=0) 
 
 def inference(data_input, engine):
     """
