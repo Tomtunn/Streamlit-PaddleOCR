@@ -30,8 +30,11 @@ def previous_page():
     st.session_state.page_number -= 1
 
 
-def run(img_dir, engine):
 
+
+def run(img_dir, engine):
+    pdf_data = None
+    n_max_page = 0
     # st.set_option("deprecation.showfileUploaderEncoding", False)
     idm = ImageDirManager(img_dir)
 
@@ -124,8 +127,24 @@ def run(img_dir, engine):
     def reset_page_number():
         st.session_state.page_number = 0
 
-    file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=True, on_change=reset_page_number)
-    
+    file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=False, on_change=reset_page_number)
+
+    if not file:
+        img_file_name = idm.get_image(st.session_state["image_index"])
+        file = os.path.join(img_dir, img_file_name)
+        ext = os.path.splitext(file)[-1]
+        st.write(ext)
+        if ext == ".pdf":
+            file_type = "pdf"
+        if ext == ".jpg" or ext == ".png":
+            file_type = "image"
+    else:
+        file_type = file.type
+        st.write(file_type)
+    #         file.append(uploaded_file)
+    #         file.append(os.path.join(img_dir, img_file_name))
+        # if uploaded_file.type.startswith('image'):
+        #     image = Image.open(uploaded_file)
     # Main content: annotate images
     if 'page_number' not in st.session_state:
         reset_page_number()
@@ -133,107 +152,113 @@ def run(img_dir, engine):
     if 'button' not in st.session_state:
         st.session_state.button = False
 
-    for uploaded_file in file:
-        if uploaded_file.type == "application/pdf":
+    uploaded_file = file
+    if file_type == "application/pdf" or file_type == "pdf":
+        if file_type == "application/pdf":
             doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
-            n_max_page = len(doc)
-            # Condition as if document has only one page
-            show_navigation_buttons = n_max_page > 1
-            # page_number = 0
-            pdf_data = read_pdf(doc, st.session_state.page_number)
+        if file_type == "pdf":
+            doc = fitz.open(uploaded_file)
+        n_max_page = len(doc)
+        pdf_data = read_pdf(doc, st.session_state.page_number)
 
+    
+    if file_type == 'image' or file_type == 'image/jpeg':
+        pdf_data = uploaded_file
+        n_max_page = 1
 
-        # img_file_name = idm.get_image(st.session_state["image_index"])
-        # img_path = os.path.join(img_dir, img_file_name)
-            
-            im = ImageManager(pdf_data, json_template_path, selected_template)
-            img = im.get_img()
-            resized_img = im.resizing_img()
-            resized_rects = im.get_resized_rects()
-            rects = st_img_label(resized_img, box_color="red", rects=resized_rects)
-            
-            # Previous and next page buttons
-            col1, col2, col3 = st.columns(3)
+    show_navigation_buttons = n_max_page > 1
+    
+    st.write(pdf_data)
+    st.write(file)
+
+    im = ImageManager(pdf_data, json_template_path, selected_template)
+    img = im.get_img()
+    resized_img = im.resizing_img()
+    resized_rects = im.get_resized_rects()
+    rects = st_img_label(resized_img, box_color="red", rects=resized_rects)
+    
+    # Previous and next page buttons
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        if st.session_state.page_number > 0 and show_navigation_buttons:
+            st.button(label="Previous page", on_click=previous_page)
+        # elif st.session_state.page_number == 0:
+        #     st.warning('This is the first page.')
+    with col2:
+        st.write(f"Page {st.session_state.page_number + 1}/ {n_max_page}")
+    with col3:
+        if st.session_state.page_number < n_max_page - 1 and show_navigation_buttons:
+            st.button(label="Next page", on_click=next_page)
+        elif st.session_state.page_number == n_max_page - 1 and show_navigation_buttons:
+            st.warning('This is the last page.')
+
+    if rects:
+        st.button(label="Save", on_click=annotate)
+        preview_imgs = im.init_annotation(rects)
+        for i, prev_img in enumerate(preview_imgs):
+            prev_img[0].thumbnail((500, 300))
+            col1, col2 = st.columns(2)
             with col1:
-                if st.session_state.page_number > 0 and show_navigation_buttons:
-                    st.button(label="Previous page", on_click=previous_page)
-                # elif st.session_state.page_number == 0:
-                #     st.warning('This is the first page.')
+                col1.image(prev_img[0])
             with col2:
-                st.write(f"Page {st.session_state.page_number + 1}/ {n_max_page}")
-            with col3:
-                if st.session_state.page_number < n_max_page - 1 and show_navigation_buttons:
-                    st.button(label="Next page", on_click=next_page)
-                elif st.session_state.page_number == n_max_page - 1 and show_navigation_buttons:
-                    st.warning('This is the last page.')
-
-        if rects:
-            st.button(label="Save", on_click=annotate)
-            preview_imgs = im.init_annotation(rects)
-            for i, prev_img in enumerate(preview_imgs):
-                prev_img[0].thumbnail((500, 300))
-                col1, col2 = st.columns(2)
-                with col1:
-                    col1.image(prev_img[0])
-                with col2:
-                    if prev_img[2]:
-                        img_id = prev_img[2]
-                    elif not prev_img[2]:
-                        img_id = ""
-                    
-                    col2.write("Output Type")
-                    select_type = ""
-                    img_checkbox = st.checkbox("image", key=f"img_check_{i}")
-                    text_checkbox = st.checkbox("table", key=f"text_check_{i}")
-                    if img_checkbox and not text_checkbox:
-                        select_type = "image"
-                    if text_checkbox and not img_checkbox:
-                        select_type = "table"
-                    if img_checkbox and text_checkbox:
-                        select_type = "both"
-
-                    select_id = col2.text_input('ID Name', img_id, key=f"label_{i}")
-                    im.set_annotation(i, select_type, select_id)
-                    
-                    if select_type == "table":
-                        xmin, ymin, xmax, ymax = get_box_coords(rects, i)
+                if prev_img[2]:
+                    img_id = prev_img[2]
+                elif not prev_img[2]:
+                    img_id = ""
                 
-                        #create data_input
-                        current_bbox = [
-                                {
-                                    "id": select_id,
-                                    "type": "image",
-                                    "box_pos": [xmin, ymin, xmax, ymax]
-                                }
-                            ]
-                        data_input = [
-                            {
-                                "template_name": current_bbox,
-                                "image": img,
-                                "page": st.session_state.page_number,
-                                }
-                            ]
-                        
-                        predict_df = inference(data_input, engine)
-                        st.data_editor(predict_df, num_rows="dynamic")
-                        # st.write(predict_df)
+                col2.write("Output Type")
+                select_type = ""
+                img_checkbox = st.checkbox("image", key=f"img_check_{i}")
+                text_checkbox = st.checkbox("table", key=f"text_check_{i}")
+                if img_checkbox and not text_checkbox:
+                    select_type = "image"
+                if text_checkbox and not img_checkbox:
+                    select_type = "table"
+                if img_checkbox and text_checkbox:
+                    select_type = "both"
 
-            st.write("File name will the same name as ID Name")
-            if st.button(label="Save All Image"):
-                for i, box_info in enumerate(rects):
-                    if box_info["label"] == "image" or box_info["label"] == "both":
-                        xmin, ymin, xmax, ymax = get_box_coords(rects, i)
-                        cropped_image = img.crop((xmin, ymin, xmax, ymax))
-                        output_path = box_info["id"] + ".png"
-                        # cropped_image.save(output_path)
-                        st.write(output_path)
-                        try:
-                            cropped_image.save(output_path)
-                            st.success(f"Image saved successfully at {output_path}")
-                        except Exception as e:
-                            st.error(f"Error saving image: {e} {output_path}")
-                    else:
-                        st.warning("Select image checkbox to save image")
+                select_id = col2.text_input('ID Name', img_id, key=f"label_{i}")
+                im.set_annotation(i, select_type, select_id)
+                
+                if select_type == "table":
+                    xmin, ymin, xmax, ymax = get_box_coords(rects, i)
+            
+                    #create data_input
+                    current_bbox = [
+                            {
+                                "id": select_id,
+                                "type": "image",
+                                "box_pos": [xmin, ymin, xmax, ymax]
+                            }
+                        ]
+                    data_input = [
+                        {
+                            "template_name": current_bbox,
+                            "image": img,
+                            "page": st.session_state.page_number,
+                            }
+                        ]
+                    
+                    predict_df = inference(data_input, engine)
+                    st.data_editor(predict_df, num_rows="dynamic")
+                    st.write(predict_df)
+
+        st.write("File name will the same name as ID Name")
+        if st.button(label="Save All Image"):
+            for i, box_info in enumerate(rects):
+                if box_info["label"] == "image" or box_info["label"] == "both":
+                    xmin, ymin, xmax, ymax = get_box_coords(rects, i)
+                    cropped_image = img.crop((xmin, ymin, xmax, ymax))
+                    output_path = box_info["id"] + ".png"
+                    # cropped_image.save(output_path)
+                    st.write(output_path)
+                    try:
+                        cropped_image.save(output_path)
+                        st.success(f"Image saved successfully at {output_path}")
+                    except Exception as e:
+                        st.error(f"Error saving image: {e} {output_path}")
+                else:
+                    st.warning("Select image checkbox to save image")
             
 
 if __name__ == "__main__":
@@ -242,4 +267,4 @@ if __name__ == "__main__":
         table_engine = load_model()
         return table_engine
     table_engine = get_model()
-    run(img_dir="img_dir", engine=table_engine)
+    run(img_dir="D:/tong/BME/y4_1/image/code/ocr/OneDrive_2023-11-29/Sample pdf scan", engine=table_engine)
