@@ -71,7 +71,7 @@ def process_result(result):
     if len(df_ls) == 0:
         return pd.DataFrame()
     else:    
-        return pd.concat(df_ls, axis=0) 
+        return pd.concat(df_ls, axis=0).reset_index(drop=True)
 
 def inference(data_input, engine):
     """
@@ -87,8 +87,6 @@ def inference(data_input, engine):
     df_predict_ls = []
     for page_index in range(len(data_input)):
         page = data_input[page_index]
-        # image_path = page['path']
-        # image = cv2.imread(image_path)
         image = page['image']
         image = np.asarray(image)
         for box_index in range(len(page['template_name'])):

@@ -16,14 +16,31 @@ This web app leverages Optical Character Recognition (OCR) to extract text from 
 
 
 ## Getting Started
-1. Click the link to access the online application.
+**1. Click the link to access the online application.**
 - https://huggingface.co/spaces/RinradaC/demo-app
+
+**2. Select an option**
+- Manual labelling
+<br>
+
+
+- Auto-extraction
+  
+<br>
+
+
+https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/6c4623b5-8c8b-4a17-87b4-0d94baa689d9 
+
+
+
 
 ## Reference
 - [streamlit-img-label.git](https://github.com/lit26/streamlit-img-label.git)
+- [PaddleOCR.git](https://github.com/PaddlePaddle/PaddleOCR.git).
 
 ## Donation
-> If you think our project is valuable, please consider giving us a time to sleep🛌💤
+>If you think our project is valuable, please consider `giving us time to sleep🛌💤`
+
 
 ## Contact Us
 <div align="left">
