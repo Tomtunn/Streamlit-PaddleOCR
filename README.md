@@ -30,11 +30,10 @@ https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/6c4623b5-8
 
 
 
-  
-
 
 ## Reference
 - [streamlit-img-label.git](https://github.com/lit26/streamlit-img-label.git)
+- [PaddleOCR.git](https://github.com/PaddlePaddle/PaddleOCR.git).
 
 ## Donation
 > If you think our project is valuable, please consider giving us a time to sleep🛌💤
