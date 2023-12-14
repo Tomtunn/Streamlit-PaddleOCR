@@ -22,9 +22,8 @@ def read_pdf(_doc, page_number):
     # st.image(Image.open(pdf_data), caption=f"Page {page_number}", use_column_width=True)
     return pdf_data
 
-@st.cache_data()
-def get_predict(_data_input, _engine):
-    predict_df = inference(_data_input, _engine)
+def get_predict(data_input, engine):
+    predict_df = inference(data_input, engine)
     return predict_df
 
 # Next and previous page function
