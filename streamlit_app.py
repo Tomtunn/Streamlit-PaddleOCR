@@ -14,12 +14,18 @@ from streamlit_img_label.manage import ImageManager, ImageDirManager
 
 json_template_path = "template_file.json"
 
-def read_pdf(doc, page_number):
-    pdf_page = doc[page_number]
+@st.cache_data()
+def read_pdf(_doc, page_number):
+    pdf_page = _doc[page_number]
     pix = pdf_page.get_pixmap(dpi=300)
     pdf_data = io.BytesIO(pix.pil_tobytes(format='jpeg'))
     # st.image(Image.open(pdf_data), caption=f"Page {page_number}", use_column_width=True)
     return pdf_data
+
+@st.cache_data()
+def get_predict(data_input, engine):
+    predict_df = inference(data_input, engine)
+    return predict_df
 
 # Next and previous page function
 def next_page():
@@ -62,6 +68,7 @@ def run(img_dir, engine):
         else:
             st.warning('This is the first image.')
 
+    @st.cache_data()
     def next_annotate_file():
         image_index = st.session_state["image_index"]
         next_image_index = idm.get_next_annotation_image(image_index)
@@ -74,7 +81,8 @@ def run(img_dir, engine):
     def go_to_image():
         file_index = st.session_state["files"].index(st.session_state["file"])
         st.session_state["image_index"] = file_index
-        
+    
+    @st.cache_data()    
     def annotate():
         im.save_annotation()
         # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
