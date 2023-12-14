@@ -45,14 +45,27 @@ from xml.etree import ElementTree as ET
 #     return rects
 
 def read_json(json_file_path, template_name):
+    """read_json
+
+    Args:
+        json_file_path(str): the json file path.
+        template_name(str): the template name.
+        
+    Returns:
+        rects(list): the bounding boxes of the image.
+    """
     if not os.path.isfile(json_file_path):
         return []
+    
     with open(json_file_path) as f:
         template_dict = json.load(f)
+        
     if template_name not in template_dict.keys():
         return []
+    
     boxes_template = template_dict[template_name]
     rects = []
+    
     for boxes in boxes_template:
         type_output = boxes["type"]
         type_id = boxes["id"]
@@ -70,6 +83,7 @@ def read_json(json_file_path, template_name):
                 "id": type_id
             }
         )
+        
     return rects
 
 
@@ -94,9 +108,21 @@ def read_json(json_file_path, template_name):
 #     writer.save(f"{file_name}.xml")
 
 def output_json(json_file_path, templat_name, rects):
+    
+    """write the template json file.
+    
+    Args:
+        json_file_path(str): the json file path.
+        templat_name(str): the template name.
+        rects(list): the bounding boxes of the image.
+        
+    returns:
+        None    
+    """
 
     with open(json_file_path) as f:
         template_dict = json.load(f)
+        
     # writer = Writer(img_file, img.width, img.height)
     if templat_name in template_dict.keys():
         template_dict[templat_name] = []
@@ -115,5 +141,20 @@ def output_json(json_file_path, templat_name, rects):
 
     with open(json_file_path, 'w') as json_file:
         json.dump(template_dict, json_file, indent=4)
+        
+        
+def get_json_template(json_file_path):
+    """get the json template file.
+    
+    Args:
+        json_file_path(str): the json file path.
+        
+    returns:
+        template_dict(dict): the json template file.    
+    """
+    with open(json_file_path) as f:
+        template_dict = json.load(f)
+        
+    return template_dict
 
 #print(read_json('template.json', 'template1'))
