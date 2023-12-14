@@ -23,8 +23,8 @@ def read_pdf(_doc, page_number):
     return pdf_data
 
 @st.cache_data()
-def get_predict(data_input, engine):
-    predict_df = inference(data_input, engine)
+def get_predict(_data_input, _engine):
+    predict_df = inference(_data_input, _engine)
     return predict_df
 
 # Next and previous page function
@@ -247,12 +247,16 @@ def run(img_dir, engine):
                             }
                         ]
                     
-                    predict_df = inference(data_input, engine)
-                    st.data_editor(predict_df, num_rows="dynamic")
+                        
+                    predict_df = get_predict(data_input, engine)# ocr image
+                    st.data_editor(predict_df, num_rows="dynamic") # editable dataframe
+                        
                     st.write(predict_df)
 
         st.write("File name will the same name as ID Name")
         if st.button(label="Save All Image"):
+                
+                # crop and save image
             for i, box_info in enumerate(rects):
                 if box_info["label"] == "image" or box_info["label"] == "both":
                     xmin, ymin, xmax, ymax = get_box_coords(rects, i)
