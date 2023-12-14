@@ -24,12 +24,13 @@ def read_pdf(doc, page_number):
 # Next and previous page function
 def next_page():
     st.session_state.page_number += 1
-        
+
 
 def previous_page():
     st.session_state.page_number -= 1
 
-def run(img_dir, data_type):
+
+def run(img_dir, engine):
 
     # st.set_option("deprecation.showfileUploaderEncoding", False)
     idm = ImageDirManager(img_dir)
@@ -80,7 +81,14 @@ def run(img_dir, data_type):
         # if image_annotate_file_name not in st.session_state["annotation_files"]:
             # st.session_state["annotation_files"].append(image_annotate_file_name)
         next_annotate_file()
-
+        st.session_state.button = not st.session_state.button
+        
+    def get_box_coords(rects, i):
+        xmin = rects[i]["left"]
+        ymin = rects[i]["top"]
+        xmax = rects[i]["left"] + rects[i]["width"]
+        ymax = rects[i]["top"] + rects[i]["height"]
+        return(xmin, ymin, xmax, ymax)
 
     # Sidebar: show status
     # n_files = len(st.session_state["files"])
@@ -89,8 +97,7 @@ def run(img_dir, data_type):
     # st.sidebar.write("Total annotate files:", n_annotate_files)
     # st.sidebar.write("Remaining files:", n_files - n_annotate_files)
     
-    # load initail model
-    tabular_engine = load_model()
+    
     
 
     options = ["Manual labelling", "Auto-extraction"]
@@ -106,31 +113,35 @@ def run(img_dir, data_type):
         selected_template = st.sidebar.selectbox("Select the template:", list(template_dict.keys()))
 
 
-    # st.sidebar.selectbox(
-    #     "Files",
-    #     st.session_state["files"],
-    #     index=st.session_state["image_index"],
-    #     on_change=go_to_image,
-    #     key="file",
-    # )
+    st.sidebar.selectbox(
+        "Files",
+        st.session_state["files"],
+        index=st.session_state["image_index"],
+        on_change=go_to_image,
+        key="file",
+    )
 
-    file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=True)
+    def reset_page_number():
+        st.session_state.page_number = 0
+
+    file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=True, on_change=reset_page_number)
     
     # Main content: annotate images
     if 'page_number' not in st.session_state:
-        st.session_state.page_number = 0
+        reset_page_number()
+    
+    if 'button' not in st.session_state:
+        st.session_state.button = False
 
     for uploaded_file in file:
         if uploaded_file.type == "application/pdf":
             doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
             n_max_page = len(doc)
+            # Condition as if document has only one page
+            show_navigation_buttons = n_max_page > 1
             # page_number = 0
             pdf_data = read_pdf(doc, st.session_state.page_number)
-            # col1, col2 = st.columns(2)
-            # with col1:
-            #     st.button(label="Previous image", on_click=previous_image)
-            # with col2:
-            #     st.button(label="Next image", on_click=next_image)
+
 
         # img_file_name = idm.get_image(st.session_state["image_index"])
         # img_path = os.path.join(img_dir, img_file_name)
@@ -140,87 +151,95 @@ def run(img_dir, data_type):
             resized_img = im.resizing_img()
             resized_rects = im.get_resized_rects()
             rects = st_img_label(resized_img, box_color="red", rects=resized_rects)
-
+            
             # Previous and next page buttons
             col1, col2, col3 = st.columns(3)
             with col1:
-                if st.session_state.page_number > 0:
+                if st.session_state.page_number > 0 and show_navigation_buttons:
                     st.button(label="Previous page", on_click=previous_page)
-                elif st.session_state.page_number == 0:
-                    st.warning('This is the first page.')
+                # elif st.session_state.page_number == 0:
+                #     st.warning('This is the first page.')
             with col2:
                 st.write(f"Page {st.session_state.page_number + 1}/ {n_max_page}")
             with col3:
-                if st.session_state.page_number < n_max_page - 1:
+                if st.session_state.page_number < n_max_page - 1 and show_navigation_buttons:
                     st.button(label="Next page", on_click=next_page)
-                elif st.session_state.page_number == n_max_page - 1:
+                elif st.session_state.page_number == n_max_page - 1 and show_navigation_buttons:
                     st.warning('This is the last page.')
-
-
-            
-        
 
         if rects:
             st.button(label="Save", on_click=annotate)
             preview_imgs = im.init_annotation(rects)
-
             for i, prev_img in enumerate(preview_imgs):
-                prev_img[0].thumbnail((200, 200))
+                prev_img[0].thumbnail((500, 300))
                 col1, col2 = st.columns(2)
                 with col1:
                     col1.image(prev_img[0])
                 with col2:
-                    default_index = 0
-                    if prev_img[1]:
-                        default_index = data_type.index(prev_img[1])
                     if prev_img[2]:
                         img_id = prev_img[2]
                     elif not prev_img[2]:
                         img_id = ""
                     
                     col2.write("Output Type")
+                    select_type = ""
+                    img_checkbox = st.checkbox("image", key=f"img_check_{i}")
+                    text_checkbox = st.checkbox("table", key=f"text_check_{i}")
+                    if img_checkbox and not text_checkbox:
+                        select_type = "image"
+                    if text_checkbox and not img_checkbox:
+                        select_type = "table"
+                    if img_checkbox and text_checkbox:
+                        select_type = "both"
 
-                    for option in data_type:
-                        select_type = st.checkbox(
-                                option,
-                                value=(option in [prev_img[1]]),
-                                key=f"{option}_{i}",
-                        )
-
-                        if select_type:
-                            im.set_annotation(i, option, "")
-
-                    select_id = col2.text_input('col_name', img_id, key=f"label_{i}")
+                    select_id = col2.text_input('ID Name', img_id, key=f"label_{i}")
                     im.set_annotation(i, select_type, select_id)
                     
-                    bbox = im.get_current_rects()
-                    xmin = bbox[i]["left"]
-                    ymin = bbox[i]["top"]
-                    xmax = bbox[i]["left"] + bbox[i]["width"]
-                    ymax = bbox[i]["top"] + bbox[i]["height"]
-                    
-                    #create data_input
-                    current_bbox = [
+                    if select_type == "table":
+                        xmin, ymin, xmax, ymax = get_box_coords(rects, i)
+                
+                        #create data_input
+                        current_bbox = [
+                                {
+                                    "id": select_id,
+                                    "type": "image",
+                                    "box_pos": [xmin, ymin, xmax, ymax]
+                                }
+                            ]
+                        data_input = [
                             {
-                                "id": select_id,
-                                "type": "image",
-                                "box_pos": [xmin, ymin, xmax, ymax]
-                            }
-                        ]
+                                "template_name": current_bbox,
+                                "image": img,
+                                "page": st.session_state.page_number,
+                                }
+                            ]
                         
-                    data_input = [
-                        {
-                            "template_name": current_bbox,
-                            "image": img,
-                            "page": st.session_state.page_number,
-                            }
-                        ]
-                    
-                    predict_df = inference(data_input, tabular_engine)
-                    st.write(predict_df)
+                        predict_df = inference(data_input, engine)
+                        st.data_editor(predict_df, num_rows="dynamic")
+                        # st.write(predict_df)
 
+            st.write("File name will the same name as ID Name")
+            if st.button(label="Save All Image"):
+                for i, box_info in enumerate(rects):
+                    if box_info["label"] == "image" or box_info["label"] == "both":
+                        xmin, ymin, xmax, ymax = get_box_coords(rects, i)
+                        cropped_image = img.crop((xmin, ymin, xmax, ymax))
+                        output_path = box_info["id"] + ".png"
+                        # cropped_image.save(output_path)
+                        st.write(output_path)
+                        try:
+                            cropped_image.save(output_path)
+                            st.success(f"Image saved successfully at {output_path}")
+                        except Exception as e:
+                            st.error(f"Error saving image: {e} {output_path}")
+                    else:
+                        st.warning("Select image checkbox to save image")
+            
 
 if __name__ == "__main__":
-    data_types = ["table", "image"]
-    run(img_dir="img_dir", data_type=data_types)
-
+    @st.cache_resource()
+    def get_model():
+        table_engine = load_model()
+        return table_engine
+    table_engine = get_model()
+    run(img_dir="img_dir", engine=table_engine)

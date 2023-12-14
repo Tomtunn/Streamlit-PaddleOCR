@@ -50,11 +50,11 @@ def perform_ocr_editable_df(image, image_index):
     edited_df = st.data_editor(ocr_df, num_rows="dynamic")
 
     # Button to download the edited DataFrame as a CSV file
-    if st.button(f"Download Edited CSV - Image {image_index}"):
-        csv = edited_df.to_csv(index=False).encode()  # Convert DataFrame to CSV bytes
-        b64 = base64.b64encode(csv).decode()  # Encode CSV bytes to base64
-        href = f'<a href="data:file/csv;base64,{b64}" download="edited_ocr_results_Image_{image_index}.csv">Click here to download</a>'
-        st.markdown(href, unsafe_allow_html=True)  # Display download link
+    # if st.button(f"Download Edited CSV - Image {image_index}"):
+    #     csv = edited_df.to_csv(index=False).encode()  # Convert DataFrame to CSV bytes
+    #     b64 = base64.b64encode(csv).decode()  # Encode CSV bytes to base64
+    #     href = f'<a href="data:file/csv;base64,{b64}" download="edited_ocr_results_Image_{image_index}.csv">Click here to download</a>'
+    #     st.markdown(href, unsafe_allow_html=True)  # Display download link
 
     ocr_results.append(ocr_df)
     return ocr_results
