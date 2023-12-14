@@ -174,15 +174,21 @@ def run(img_dir, data_type):
                     elif not prev_img[2]:
                         img_id = ""
                     
-                    select_type = col2.selectbox(
-                        "output_type", data_type, key=f"type_{i}", index=default_index
-                    )
+                    col2.write("Output Type")
+
+                    for option in data_type:
+                        select_type = st.checkbox(
+                                option,
+                                value=(option in [prev_img[1]]),
+                                key=f"{option}_{i}",
+                        )
+
+                        if select_type:
+                            im.set_annotation(i, option, "")
+
                     select_id = col2.text_input('col_name', img_id, key=f"label_{i}")
                     im.set_annotation(i, select_type, select_id)
-
-                   
-
-
+                    
 if __name__ == "__main__":
     data_types = ["table", "image"]
     run(img_dir="img_dir", data_type=data_types)
