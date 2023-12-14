@@ -13,7 +13,7 @@ def load_model():
     Returns:
         tabular engine model
     """
-    table_engine = PPStructure(recovery=True, lang='en')
+    table_engine = PPStructure(recovery=True, lang='en', layout=False)
     return table_engine
 
 def predict(table_engine, image):
@@ -43,22 +43,31 @@ def process_result(result):
     result_cp = deepcopy(result)
     df_ls = []
     for region in result_cp:
-        # if region is table
+        # if html are available
         if 'html' in region['res']:
-            html = region['res']['html']
-            wb = tablepyxl.document_to_workbook(html)
-            output = io.BytesIO()
-            wb.save(output)
-            output.seek(0)
-            df = pd.read_excel(output, header=None)
-            df_ls.append(df)
-        # else region is circle
+            # try to convert html to dataframe with tablepyxl
+            try:
+                html = region['res']['html']
+                wb = tablepyxl.document_to_workbook(html)
+                output = io.BytesIO()
+                wb.save(output)
+                output.seek(0)
+                df = pd.read_excel(output, header=None)
+                df = df.dropna(how='all').dropna(axis=1, how='all')
+                df_ls.append(df)
+            # if tablepyxl give error, try to convert html to dataframe with pandas
+            except:
+                print('except')
+                df = pd.read_html(result[0]['res']['html'])[0]
+                df = df.dropna(how='all').dropna(axis=1, how='all')
+                df_ls.append(df)
+                pass
         else:
-            text_ls = []
-            for text in region['res']:
-                text_ls.append(text['text'])
-            df = pd.DataFrame(text_ls)
+            # empty dataframe
+            df = pd.DataFrame()
             df_ls.append(df)
+            
+    # concat dataframe if there are more than 1 dataframe  
     if len(df_ls) == 0:
         return pd.DataFrame()
     else:    
@@ -87,8 +96,9 @@ def inference(data_input, engine):
             roi_image = image[y1:y2, x1:x2]
             result = predict(engine, roi_image)
             df_predict = process_result(result)
-            columns_ls = [page['template_name'][box_index]['id']] * (len(df_predict.columns))
-            df_predict.columns = columns_ls
+            id_column = page['template_name'][box_index]['id']
+            index_columns = df_predict.columns.get_level_values(0)
+            df_predict.columns = pd.MultiIndex.from_product([[id_column], index_columns])
             df_predict_ls.append(df_predict)
             
     return pd.concat(df_predict_ls, axis=1)
