@@ -6,16 +6,15 @@ import io
 from streamlit_drawable_canvas import st_canvas
 from PIL import Image, ImageDraw
 import fitz
+from ocr import load_model, inference
 
-
-import streamlit as st
 import os
 from streamlit_img_label import st_img_label
 from streamlit_img_label.manage import ImageManager, ImageDirManager
 
 json_template_path = "template_file.json"
 
-def read_image(doc, page_number):
+def read_pdf(doc, page_number):
     pdf_page = doc[page_number]
     pix = pdf_page.get_pixmap(dpi=300)
     pdf_data = io.BytesIO(pix.pil_tobytes(format='jpeg'))
@@ -40,7 +39,7 @@ def run(img_dir, data_type):
         st.session_state["annotation_files"] = idm.get_exist_annotation_files()
         st.session_state["image_index"] = 0
     else:
-        idm.set_all_files(st.session_state["files"])
+        idm.set_all_files(st.session_state["files"]) 
         idm.set_annotation_files(st.session_state["annotation_files"])
     
     def refresh():
@@ -74,6 +73,13 @@ def run(img_dir, data_type):
     def go_to_image():
         file_index = st.session_state["files"].index(st.session_state["file"])
         st.session_state["image_index"] = file_index
+        
+    def annotate():
+        im.save_annotation()
+        # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
+        # if image_annotate_file_name not in st.session_state["annotation_files"]:
+            # st.session_state["annotation_files"].append(image_annotate_file_name)
+        next_annotate_file()
 
 
     # Sidebar: show status
@@ -83,6 +89,9 @@ def run(img_dir, data_type):
     # st.sidebar.write("Total annotate files:", n_annotate_files)
     # st.sidebar.write("Remaining files:", n_files - n_annotate_files)
     
+    # load initail model
+    tabular_engine = load_model()
+    
 
     options = ["Manual labelling", "Auto-extraction"]
     selected_option = st.sidebar.radio("Select an option:", options)
@@ -91,6 +100,7 @@ def run(img_dir, data_type):
         selected_template = st.sidebar.text_input("Input template", "")
 
     if selected_option == "Auto-extraction":
+        # load and select json template
         with open(json_template_path) as f:
             template_dict = json.load(f)
         selected_template = st.sidebar.selectbox("Select the template:", list(template_dict.keys()))
@@ -115,7 +125,7 @@ def run(img_dir, data_type):
             doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
             n_max_page = len(doc)
             # page_number = 0
-            pdf_data = read_image(doc, st.session_state.page_number)
+            pdf_data = read_pdf(doc, st.session_state.page_number)
             # col1, col2 = st.columns(2)
             # with col1:
             #     st.button(label="Previous image", on_click=previous_image)
@@ -147,13 +157,7 @@ def run(img_dir, data_type):
                     st.warning('This is the last page.')
 
 
-
-        def annotate():
-            im.save_annotation()
-            # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
-            # if image_annotate_file_name not in st.session_state["annotation_files"]:
-                # st.session_state["annotation_files"].append(image_annotate_file_name)
-            next_annotate_file()
+            
         
 
         if rects:
@@ -173,14 +177,38 @@ def run(img_dir, data_type):
                         img_id = prev_img[2]
                     elif not prev_img[2]:
                         img_id = ""
-                    
+                         
                     select_type = col2.selectbox(
                         "output_type", data_type, key=f"type_{i}", index=default_index
                     )
-                    select_id = col2.text_input('col_name', img_id, key=f"label_{i}")
+                    select_id = col2.text_input('column_name', img_id, key=f"label_{i}")
                     im.set_annotation(i, select_type, select_id)
-
-                   
+                    
+                    bbox = im.get_current_rects()
+                    xmin = bbox[i]["left"]
+                    ymin = bbox[i]["top"]
+                    xmax = bbox[i]["left"] + bbox[i]["width"]
+                    ymax = bbox[i]["top"] + bbox[i]["height"]
+                    
+                    #create data_input
+                    current_bbox = [
+                            {
+                                "id": select_id,
+                                "type": "image",
+                                "box_pos": [xmin, ymin, xmax, ymax]
+                            }
+                        ]
+                        
+                    data_input = [
+                        {
+                            "template_name": current_bbox,
+                            "image": img,
+                            "page": st.session_state.page_number,
+                            }
+                        ]
+                    
+                    predict_df = inference(data_input, tabular_engine)
+                    st.write(predict_df)
 
 
 if __name__ == "__main__":
