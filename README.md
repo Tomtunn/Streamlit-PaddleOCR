@@ -1,4 +1,4 @@
-## Head Bomb🤯 - OCR Web App👁️
+## Plato - OCR Web App👁️
 <div align="center">
 
 ><img src="https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/81a66306-4688-4c71-a996-da879e88c772" alt="logo" width="220" height="120">
