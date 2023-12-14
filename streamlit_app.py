@@ -13,7 +13,7 @@ import os
 from streamlit_img_label import st_img_label
 from streamlit_img_label.manage import ImageManager, ImageDirManager
 
-json_template_path = "template_file.json"
+json_template_path = "C:/Users/user/Desktop/EGBI_433_image_processing/template_file.json"
 
 def read_image(doc, page_number):
     pdf_page = doc[page_number]
@@ -22,8 +22,10 @@ def read_image(doc, page_number):
     # st.image(Image.open(pdf_data), caption=f"Page {page_number}", use_column_width=True)
     return pdf_data
 
+# Next and previous page function
 def next_page():
     st.session_state.page_number += 1
+        
 
 def previous_page():
     st.session_state.page_number -= 1
@@ -73,6 +75,7 @@ def run(img_dir, data_type):
         file_index = st.session_state["files"].index(st.session_state["file"])
         st.session_state["image_index"] = file_index
 
+
     # Sidebar: show status
     # n_files = len(st.session_state["files"])
     # n_annotate_files = len(st.session_state["annotation_files"])
@@ -109,7 +112,8 @@ def run(img_dir, data_type):
 
     for uploaded_file in file:
         if uploaded_file.type == "application/pdf":
-            doc = fitz.open(stream=uploaded_file.read(), filetype="pdf") 
+            doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+            n_max_page = len(doc)
             # page_number = 0
             pdf_data = read_image(doc, st.session_state.page_number)
             # col1, col2 = st.columns(2)
@@ -127,12 +131,30 @@ def run(img_dir, data_type):
             resized_rects = im.get_resized_rects()
             rects = st_img_label(resized_img, box_color="red", rects=resized_rects)
 
+            # Previous and next page buttons
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                if st.session_state.page_number > 0:
+                    st.button(label="Previous page", on_click=previous_page)
+                elif st.session_state.page_number == 0:
+                    st.warning('This is the first page.')
+            with col2:
+                st.write(f"Page {st.session_state.page_number + 1}/ {n_max_page}")
+            with col3:
+                if st.session_state.page_number < n_max_page - 1:
+                    st.button(label="Next page", on_click=next_page)
+                elif st.session_state.page_number == n_max_page - 1:
+                    st.warning('This is the last page.')
+
+
+
         def annotate():
             im.save_annotation()
             # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
             # if image_annotate_file_name not in st.session_state["annotation_files"]:
                 # st.session_state["annotation_files"].append(image_annotate_file_name)
             next_annotate_file()
+        
 
         if rects:
             st.button(label="Save", on_click=annotate)
@@ -157,6 +179,8 @@ def run(img_dir, data_type):
                     )
                     select_id = col2.text_input('col_name', img_id, key=f"label_{i}")
                     im.set_annotation(i, select_type, select_id)
+
+                   
 
 
 if __name__ == "__main__":
