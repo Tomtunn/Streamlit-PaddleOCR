@@ -156,7 +156,7 @@ class ImageManager:
     def save_annotation(self):
         # """output the xml annotation file."""
         # output_xml(self._filename, self._img, self._current_rects)
-        output_json(self._json_file_path, self._template, self._img, self._current_rects)
+        output_json(self._json_file_path, self._template, self._current_rects)
 
 
 class ImageDirManager:
@@ -203,3 +203,5 @@ class ImageDirManager:
             return image_index
         if not image_index and len(self._files) != len(self._annotations_files):
             return self._get_next_image_helper(0)
+        
+        #print("All images have been annotated.")

@@ -93,11 +93,13 @@ def read_json(json_file_path, template_name):
 #         writer.addObject(box["label"], xmin, ymin, xmax, ymax)
 #     writer.save(f"{file_name}.xml")
 
-def output_json(json_file_path, templat_name, img, rects):
+def output_json(json_file_path, templat_name, rects):
 
     with open(json_file_path) as f:
         template_dict = json.load(f)
     # writer = Writer(img_file, img.width, img.height)
+    if templat_name in template_dict.keys():
+        template_dict[templat_name] = []
     for box in rects:
         xmin = box["left"]
         ymin = box["top"]
@@ -114,3 +116,4 @@ def output_json(json_file_path, templat_name, img, rects):
     with open(json_file_path, 'w') as json_file:
         json.dump(template_dict, json_file, indent=4)
 
+#print(read_json('template.json', 'template1'))
