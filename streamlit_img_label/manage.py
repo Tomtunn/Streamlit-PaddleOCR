@@ -158,6 +158,7 @@ class ImageManager:
         # output_xml(self._filename, self._img, self._current_rects)
         output_json(self._json_file_path, self._template, self._current_rects)
         
+        
     def get_current_rects(self):
         return self._current_rects
 
