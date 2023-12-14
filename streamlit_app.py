@@ -13,7 +13,7 @@ import os
 from streamlit_img_label import st_img_label
 from streamlit_img_label.manage import ImageManager, ImageDirManager
 
-json_template_path = "C:/Users/user/Desktop/EGBI_433_image_processing/template_file.json"
+json_template_path = "template_file.json"
 
 def read_image(doc, page_number):
     pdf_page = doc[page_number]
