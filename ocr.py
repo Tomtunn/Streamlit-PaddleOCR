@@ -52,12 +52,11 @@ def process_result(result):
                 output = io.BytesIO()
                 wb.save(output)
                 output.seek(0)
-                df = pd.read_excel(output, header=None)
+                df = pd.read_excel(output, header=None, displayed_only=False)
                 df = df.dropna(how='all').dropna(axis=1, how='all')
                 df_ls.append(df)
             # if tablepyxl give error, try to convert html to dataframe with pandas
             except:
-                print('except')
                 df = pd.read_html(result[0]['res']['html'])[0]
                 df = df.dropna(how='all').dropna(axis=1, how='all')
                 df_ls.append(df)

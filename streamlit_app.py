@@ -7,7 +7,7 @@ from streamlit_drawable_canvas import st_canvas
 from PIL import Image, ImageDraw
 import fitz
 from ocr import load_model, inference
-
+import pandas as pd
 import os
 from streamlit_img_label import st_img_label
 from streamlit_img_label.manage import ImageManager, ImageDirManager
@@ -22,9 +22,9 @@ def read_pdf(_doc, page_number):
     # st.image(Image.open(pdf_data), caption=f"Page {page_number}", use_column_width=True)
     return pdf_data
 
-def get_predict(data_input, engine):
-    predict_df = inference(data_input, engine)
-    return predict_df
+# def get_predict(data_input, engine):
+#     predict_df = inference(data_input, engine)
+#     return predict_df
 
 # Next and previous page function
 def next_page():
@@ -35,9 +35,8 @@ def previous_page():
     st.session_state.page_number -= 1
 
 
-
-
 def run(img_dir, engine):
+  
     pdf_data = None
     n_max_page = 0
     # st.set_option("deprecation.showfileUploaderEncoding", False)
@@ -99,6 +98,9 @@ def run(img_dir, engine):
         xmax = rects[i]["left"] + rects[i]["width"]
         ymax = rects[i]["top"] + rects[i]["height"]
         return(xmin, ymin, xmax, ymax)
+    
+    def reset_page_number():
+        st.session_state.page_number = 0
 
     # Sidebar: show status
     # n_files = len(st.session_state["files"])
@@ -131,8 +133,7 @@ def run(img_dir, engine):
         key="file",
     )
 
-    def reset_page_number():
-        st.session_state.page_number = 0
+
 
     file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=False, on_change=reset_page_number)
 
@@ -202,6 +203,8 @@ def run(img_dir, engine):
     if rects:
         st.button(label="Save", on_click=annotate)
         preview_imgs = im.init_annotation(rects)
+
+        df_ls = [pd.DataFrame()] * len(preview_imgs) # crete list of zeros for save annotation predict df
         for i, prev_img in enumerate(preview_imgs):
             prev_img[0].thumbnail((500, 300))
             col1, col2 = st.columns(2)
@@ -224,10 +227,10 @@ def run(img_dir, engine):
                 if img_checkbox and text_checkbox:
                     select_type = "both"
 
-                select_id = col2.text_input('ID Name', img_id, key=f"label_{i}")
+                select_id = col2.text_input('ID Name', img_id if img_id else f'box{i}', key=f"label_{i}")
                 im.set_annotation(i, select_type, select_id)
                 
-                if select_type == "table":
+                if select_type == "table" or select_type == "both":
                     xmin, ymin, xmax, ymax = get_box_coords(rects, i)
             
                     #create data_input
@@ -246,22 +249,42 @@ def run(img_dir, engine):
                             }
                         ]
                     
-                        
-                    predict_df = get_predict(data_input, engine)# ocr image
-                    st.data_editor(predict_df, num_rows="dynamic") # editable dataframe
-                        
-                    st.write(predict_df)
+                    predict_df =  inference(data_input, engine)# ocr image
+                    current_df = st.data_editor(predict_df, num_rows="dynamic", key=f'dataframe{i}') # editable dataframe
+                    df_ls[i] = current_df
 
-        st.write("File name will the same name as ID Name")
-        if st.button(label="Save All Image"):
+        
+        # button to concatenate dataframe
+        if st.button(label="Concatenate Dataframes"):
+            # if there are no dataframes
+            if len(df_ls) == 0:
+                st.warning("No dataframe to concatenate")
+            # if there are dataframes
+            else:
+                try:
+                    concat_df = pd.concat(df_ls, axis=1)  # horizontal concatenate dataframe
+                    st.data_editor(concat_df, num_rows="dynamic", key='concat_dataframe')  # display concatenated dataframe
+                    csv = concat_df.to_csv(index=False).encode()  # Convert DataFrame to CSV bytes
+                    b64 = base64.b64encode(csv).decode()  # Encode CSV bytes to base64
+                    href = f'<a href="data:file/csv;base64,{b64}" download="concatenated_dataframe.csv">Click here to download</a>'
+                    st.markdown(href, unsafe_allow_html=True)  # Display download link
+                    # Check if selected_id (column name) is the same
+                    if concat_df.columns.duplicated().any():
+                        st.warning("Selected ID names are not unique")
+                except Exception as e:
+                    st.error(f"Error concatenating dataframes: {e}")
+                    
+                    
                 
-                # crop and save image
+
+        st.write("File name will be the same as ID Name")
+        if st.button(label="Save All Image"):
+            # crop and save image
             for i, box_info in enumerate(rects):
                 if box_info["label"] == "image" or box_info["label"] == "both":
                     xmin, ymin, xmax, ymax = get_box_coords(rects, i)
                     cropped_image = img.crop((xmin, ymin, xmax, ymax))
                     output_path = box_info["id"] + ".png"
-                    # cropped_image.save(output_path)
                     st.write(output_path)
                     try:
                         cropped_image.save(output_path)
@@ -273,9 +296,10 @@ def run(img_dir, engine):
             
 
 if __name__ == "__main__":
+    # st.set_page_config(page_title="The Ramsey Highlights", layout="wide")
     @st.cache_resource()
     def get_model():
         table_engine = load_model()
         return table_engine
     table_engine = get_model()
-    run(img_dir="D:/tong/BME/y4_1/image/code/ocr/OneDrive_2023-11-29/Sample pdf scan", engine=table_engine)
+    run(img_dir="Sample", engine=table_engine)
