@@ -21,6 +21,7 @@ This web app leverages Optical Character Recognition (OCR) to extract text from 
 
 **2. Select an option**
 - Manual labeling
+  
 <br>
 
 https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/15915337-ca98-4c98-a5e8-baa9544079bf
@@ -30,7 +31,7 @@ https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/15915337-c
 <br>
 
 
-https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/6c4623b5-8c8b-4a17-87b4-0d94baa689d9 
+https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/63916371-bfac-45d9-9a37-fd78dad341a9 
 
 
 
