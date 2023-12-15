@@ -23,6 +23,7 @@ This web app leverages Optical Character Recognition (OCR) to extract text from 
 - Manual labelling
 <br>
 
+https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/15915337-ca98-4c98-a5e8-baa9544079bf
 
 - Auto-extraction
   
