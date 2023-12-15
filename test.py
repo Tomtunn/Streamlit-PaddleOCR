@@ -1,1 +1,0 @@
-from ocr import load_model, inference
