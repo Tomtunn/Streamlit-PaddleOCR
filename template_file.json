@@ -202,5 +202,137 @@
                 2139
             ]
         }
+    ],
+    "idividual_info": [
+        {
+            "id": "Name",
+            "type": "table",
+            "box_pos": [
+                467,
+                121,
+                722,
+                225
+            ]
+        },
+        {
+            "id": "ID",
+            "type": "table",
+            "box_pos": [
+                470,
+                230,
+                728,
+                296
+            ]
+        },
+        {
+            "id": "DOB",
+            "type": "table",
+            "box_pos": [
+                470,
+                297,
+                731,
+                346
+            ]
+        },
+        {
+            "id": "Gender",
+            "type": "table",
+            "box_pos": [
+                467,
+                352,
+                733,
+                404
+            ]
+        },
+        {
+            "id": "Technician",
+            "type": "table",
+            "box_pos": [
+                503,
+                407,
+                794,
+                464
+            ]
+        },
+        {
+            "id": "Exam_date_od",
+            "type": "table",
+            "box_pos": [
+                1254,
+                244,
+                1451,
+                299
+            ]
+        },
+        {
+            "id": "Exam_time_od",
+            "type": "table",
+            "box_pos": [
+                1257,
+                302,
+                1460,
+                354
+            ]
+        },
+        {
+            "id": "SNumber_os",
+            "type": "table",
+            "box_pos": [
+                1257,
+                357,
+                1482,
+                403
+            ]
+        },
+        {
+            "id": "SStrength_os",
+            "type": "table",
+            "box_pos": [
+                1260,
+                398,
+                1457,
+                458
+            ]
+        },
+        {
+            "id": "Exam_date_os",
+            "type": "table",
+            "box_pos": [
+                1493,
+                236,
+                1688,
+                296
+            ]
+        },
+        {
+            "id": "Exam_time_os",
+            "type": "table",
+            "box_pos": [
+                1493,
+                296,
+                1693,
+                351
+            ]
+        },
+        {
+            "id": "SNumber_os",
+            "type": "table",
+            "box_pos": [
+                1493,
+                346,
+                1701,
+                403
+            ]
+        },
+        {
+            "id": "SStrength_os",
+            "type": "table",
+            "box_pos": [
+                1504,
+                404,
+                1624,
+                461
+            ]
+        }
     ]
 }

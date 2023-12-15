@@ -79,7 +79,7 @@ def run(img_dir, engine):
 
     st.sidebar.title("Input file")
     
-    
+    img_file_name = "_____"
     
 
     uploaded_file = st.sidebar.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=False, on_change=reset_page_number)
@@ -283,11 +283,22 @@ def run(img_dir, engine):
                         st.warning("Selected ID names are not unique")
                 except Exception as e:
                     st.error(f"Error concatenating dataframes: {e}")
-                    
-                    
-                
-
+         
         st.write("File name will be the same as ID Name")
+         
+        if st.button(label="Save Dataframe"):
+            file_name = img_file_name.split(".")[0]
+            folder_name = os.path.join(img_dir, file_name, "csv")
+            os.makedirs(folder_name, exist_ok=True)
+            # save concat dataframe
+            try:
+                concat_df = pd.concat(df_ls, axis=1) 
+                concat_df.to_csv(os.path.join(folder_name, f"{file_name}.csv"), index=False)
+                st.success(f"Dataframe saved successfully at {folder_name}")
+            except Exception as e:
+                st.error(f"Error saving dataframe: {e} {folder_name}")
+                          
+        
         if st.button(label="Save All Image"):
             file_name = img_file_name.split(".")[0]
             folder_name = os.path.join(img_dir, file_name, "img")
@@ -310,6 +321,7 @@ def run(img_dir, engine):
             
 
 if __name__ == "__main__":
+    st.set_page_config(page_title="The Ramsey Highlights", layout="wide")
     directory_name = "data_dir"
     os.makedirs(directory_name, exist_ok=True)
     @st.cache_resource()
