@@ -227,7 +227,7 @@ def run(img_dir, engine):
                 if img_checkbox and text_checkbox:
                     select_type = "both"
 
-                select_id = col2.text_input('ID Name', img_id if img_id else f'box{i}', key=f"label_{i}")
+                select_id = col2.text_input('ID Name', img_id if img_id else f'box_{i}', key=f"label_{i}")
                 im.set_annotation(i, select_type, select_id)
                 
                 if select_type == "table" or select_type == "both":
