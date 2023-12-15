@@ -20,7 +20,7 @@ This web app leverages Optical Character Recognition (OCR) to extract text from 
 - https://huggingface.co/spaces/RinradaC/demo-app
 
 **2. Select an option**
-- Manual labelling
+- Manual labeling
 <br>
 
 https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/15915337-ca98-4c98-a5e8-baa9544079bf
