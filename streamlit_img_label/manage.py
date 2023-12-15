@@ -54,7 +54,7 @@ class ImageManager:
         """
         return self._rects
 
-    def resizing_img(self, max_height=700, max_width=700):
+    def resizing_img(self, max_height=1200, max_width=1200): # 700, 700
         """resizing the image by max_height and max_width.
 
         Args:
