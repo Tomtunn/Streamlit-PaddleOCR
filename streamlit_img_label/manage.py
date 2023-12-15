@@ -169,7 +169,7 @@ class ImageDirManager:
         self._files = []
         self._annotations_files = []
 
-    def get_all_files(self, allow_types=["png", "jpg", "jpeg"]):
+    def get_all_files(self, allow_types=["pdf", "png", "jpg", "jpeg"]):
         allow_types += [i.upper() for i in allow_types]
         mask = ".*\.[" + "|".join(allow_types) + "]"
         self._files = [
@@ -177,11 +177,11 @@ class ImageDirManager:
         ]
         return self._files
 
-    def get_exist_annotation_files(self):
-        self._annotations_files = [
-            file for file in os.listdir(self._dir_name) if re.match(".*.xml", file)
-        ]
-        return self._annotations_files
+    # def get_exist_annotation_files(self):
+    #     self._annotations_files = [
+    #         file for file in os.listdir(self._dir_name) if re.match(".*.xml", file)
+    #     ]
+    #     return self._annotations_files
 
     def set_all_files(self, files):
         self._files = files
