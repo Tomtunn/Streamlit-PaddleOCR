@@ -14,7 +14,8 @@ from streamlit_img_label.manage import ImageManager, ImageDirManager
 
 json_template_path = "template_file.json"
 
-@st.cache_data()
+
+# @st.cache_data()
 def read_pdf(_doc, page_number):
     pdf_page = _doc[page_number]
     pix = pdf_page.get_pixmap(dpi=300)
@@ -22,7 +23,7 @@ def read_pdf(_doc, page_number):
     # st.image(Image.open(pdf_data), caption=f"Page {page_number}", use_column_width=True)
     return pdf_data
 
-@st.cache_data()
+# @st.cache_data()
 def get_predict(_data_input, _engine):
     predict_df = inference(_data_input, _engine)
     return predict_df
@@ -36,8 +37,6 @@ def previous_page():
     st.session_state.page_number -= 1
 
 
-
-
 def run(img_dir, engine):
     pdf_data = None
     n_max_page = 0
@@ -46,15 +45,75 @@ def run(img_dir, engine):
 
     if "files" not in st.session_state:
         st.session_state["files"] = idm.get_all_files()
-        st.session_state["annotation_files"] = idm.get_exist_annotation_files()
         st.session_state["image_index"] = 0
     else:
         idm.set_all_files(st.session_state["files"]) 
-        idm.set_annotation_files(st.session_state["annotation_files"])
+
+
+    st.sidebar.title("Template Option")
+    options = ["Manual labelling", "Auto-extraction"]
+    selected_option = st.sidebar.radio("Select an option:", options)
+    
+
+    if selected_option == "Manual labelling":
+        selected_template = st.sidebar.text_input("Input template", "")
+
+    if selected_option == "Auto-extraction":
+        # load and select json template
+        with open(json_template_path) as f:
+            template_dict = json.load(f)
+        selected_template = st.sidebar.selectbox("Select the template:", list(template_dict.keys()))
+
+
+    def reset_page_number():
+        st.session_state.page_number = 0
+    
+    def go_to_image():
+        file_index = st.session_state["files"].index(st.session_state["file"])
+        st.session_state["image_index"] = file_index
+        reset_page_number()
+
+    
+
+
+
+    st.sidebar.title("Input file")
+    
+    
+    
+
+    uploaded_file = st.sidebar.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=False, on_change=reset_page_number)
+    if uploaded_file:
+        img_file_name = uploaded_file.name
+        img_path = os.path.join(img_dir, img_file_name)
+        with open(img_path, "wb") as f:
+            f.write(uploaded_file.read())
+        st.success(f"File '{uploaded_file.name}' successfully saved to '{img_dir}'.")
+        st.session_state["files"] = idm.get_all_files()
+
+    if st.sidebar.selectbox(
+        "Files",
+        st.session_state["files"],
+        index=st.session_state["image_index"],
+        on_change=go_to_image,
+        key="file",
+    ):
+        img_file_name = idm.get_image(st.session_state["image_index"])
+    
+    
+    
+    st.title("Work Space")
+    st.write(f"**Current File: {img_file_name}**")
+    
+    img_path = os.path.join(img_dir, img_file_name)
+
+
+    
+
     
     def refresh():
         st.session_state["files"] = idm.get_all_files()
-        st.session_state["annotation_files"] = idm.get_exist_annotation_files()
+        # st.session_state["annotation_files"] = idm.get_exist_annotation_files()
         st.session_state["image_index"] = 0
 
     def next_image():
@@ -71,7 +130,7 @@ def run(img_dir, engine):
         else:
             st.warning('This is the first image.')
 
-    @st.cache_data()
+    # @st.cache_data()
     def next_annotate_file():
         image_index = st.session_state["image_index"]
         next_image_index = idm.get_next_annotation_image(image_index)
@@ -81,11 +140,9 @@ def run(img_dir, engine):
             st.warning("All images are annotated.")
             next_image()
 
-    def go_to_image():
-        file_index = st.session_state["files"].index(st.session_state["file"])
-        st.session_state["image_index"] = file_index
     
-    @st.cache_data()    
+    
+    # @st.cache_data()    
     def annotate():
         im.save_annotation()
         # image_annotate_file_name = uploaded_file.split(".")[0] + ".xml"
@@ -107,52 +164,8 @@ def run(img_dir, engine):
     # st.sidebar.write("Total files:", n_files)
     # st.sidebar.write("Total annotate files:", n_annotate_files)
     # st.sidebar.write("Remaining files:", n_files - n_annotate_files)
-    
-    
-    
-
-    options = ["Manual labelling", "Auto-extraction"]
-    selected_option = st.sidebar.radio("Select an option:", options)
-
-    if selected_option == "Manual labelling":
-        selected_template = st.sidebar.text_input("Input template", "")
-
-    if selected_option == "Auto-extraction":
-        # load and select json template
-        with open(json_template_path) as f:
-            template_dict = json.load(f)
-        selected_template = st.sidebar.selectbox("Select the template:", list(template_dict.keys()))
 
 
-    st.sidebar.selectbox(
-        "Files",
-        st.session_state["files"],
-        index=st.session_state["image_index"],
-        on_change=go_to_image,
-        key="file",
-    )
-
-    def reset_page_number():
-        st.session_state.page_number = 0
-
-    file = st.file_uploader("Upload a file:", type=["pdf", "png", "jpg"], accept_multiple_files=False, on_change=reset_page_number)
-
-    if not file:
-        img_file_name = idm.get_image(st.session_state["image_index"])
-        file = os.path.join(img_dir, img_file_name)
-        ext = os.path.splitext(file)[-1]
-        st.write(ext)
-        if ext == ".pdf":
-            file_type = "pdf"
-        if ext == ".jpg" or ext == ".png":
-            file_type = "image"
-    else:
-        file_type = file.type
-        st.write(file_type)
-    #         file.append(uploaded_file)
-    #         file.append(os.path.join(img_dir, img_file_name))
-        # if uploaded_file.type.startswith('image'):
-        #     image = Image.open(uploaded_file)
     # Main content: annotate images
     if 'page_number' not in st.session_state:
         reset_page_number()
@@ -160,26 +173,19 @@ def run(img_dir, engine):
     if 'button' not in st.session_state:
         st.session_state.button = False
 
-    uploaded_file = file
-    if file_type == "application/pdf" or file_type == "pdf":
-        if file_type == "application/pdf":
-            doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
-        if file_type == "pdf":
-            doc = fitz.open(uploaded_file)
-        n_max_page = len(doc)
-        pdf_data = read_pdf(doc, st.session_state.page_number)
 
-    
-    if file_type == 'image' or file_type == 'image/jpeg':
-        pdf_data = uploaded_file
+    if img_path.split(".")[-1] == "jpg" or img_path.split(".")[-1] == "png":
+        input_data = img_path
         n_max_page = 1
+    if img_path.split(".")[-1] == "pdf":
+        doc = fitz.open(img_path)
+        n_max_page = len(doc)
+        input_data = read_pdf(doc, st.session_state.page_number)
+
 
     show_navigation_buttons = n_max_page > 1
     
-    st.write(pdf_data)
-    st.write(file)
-
-    im = ImageManager(pdf_data, json_template_path, selected_template)
+    im = ImageManager(input_data, json_template_path, selected_template)
     img = im.get_img()
     resized_img = im.resizing_img()
     resized_rects = im.get_resized_rects()
@@ -201,7 +207,7 @@ def run(img_dir, engine):
             st.warning('This is the last page.')
 
     if rects:
-        st.button(label="Save", on_click=annotate)
+        st.button(label="Save Template", on_click=annotate)
         preview_imgs = im.init_annotation(rects)
         for i, prev_img in enumerate(preview_imgs):
             prev_img[0].thumbnail((500, 300))
@@ -228,7 +234,7 @@ def run(img_dir, engine):
                 select_id = col2.text_input('ID Name', img_id, key=f"label_{i}")
                 im.set_annotation(i, select_type, select_id)
                 
-                if select_type == "table":
+                if select_type == "table" or select_type == "both":
                     xmin, ymin, xmax, ymax = get_box_coords(rects, i)
             
                     #create data_input
@@ -251,17 +257,19 @@ def run(img_dir, engine):
                     predict_df = get_predict(data_input, engine)# ocr image
                     st.data_editor(predict_df, num_rows="dynamic") # editable dataframe
                         
-                    st.write(predict_df)
+                    # st.write(predict_df)
 
         st.write("File name will the same name as ID Name")
         if st.button(label="Save All Image"):
-                
+            file_name = img_file_name.split(".")[0]
+            folder_name = os.path.join(img_dir, file_name, "img")
+            os.makedirs(folder_name, exist_ok=True)
                 # crop and save image
             for i, box_info in enumerate(rects):
                 if box_info["label"] == "image" or box_info["label"] == "both":
                     xmin, ymin, xmax, ymax = get_box_coords(rects, i)
                     cropped_image = img.crop((xmin, ymin, xmax, ymax))
-                    output_path = box_info["id"] + ".png"
+                    output_path = os.path.join(folder_name, box_info["id"] + ".png")
                     # cropped_image.save(output_path)
                     st.write(output_path)
                     try:
@@ -274,9 +282,11 @@ def run(img_dir, engine):
             
 
 if __name__ == "__main__":
+    directory_name = "data_dir"
+    os.makedirs(directory_name, exist_ok=True)
     @st.cache_resource()
     def get_model():
         table_engine = load_model()
         return table_engine
     table_engine = get_model()
-    run(img_dir="D:/tong/BME/y4_1/image/code/ocr/OneDrive_2023-11-29/Sample pdf scan", engine=table_engine)
+    run(img_dir=directory_name, engine=table_engine)
