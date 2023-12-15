@@ -8,16 +8,16 @@ import numpy as np
 from deskew import determine_skew
 from skimage.transform import rotate
 
-def strighten_image(img):
-    """
-    img: np.array
+# def strighten_image(img):
+#     """
+#     img: np.array
 
-    rotate image to strighten
-    """
-    angle = determine_skew(img)
-    rotated = rotate(img, angle, resize=True) * 255
-    rotated_img = rotated.astype(np.uint8)
-    return rotated_img, angle
+#     rotate image to strighten
+#     """
+#     angle = determine_skew(img)
+#     rotated = rotate(img, angle, resize=True) * 255
+#     rotated_img = rotated.astype(np.uint8)
+#     return rotated_img, angle
 
 def load_model():
     """
@@ -40,7 +40,7 @@ def predict(table_engine, image):
     Returns:
         result of prediction
     """
-    image, angle = strighten_image(image)
+    # image, angle = strighten_image(image)
     result = table_engine(image)
     return result
 

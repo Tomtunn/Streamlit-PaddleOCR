@@ -67,6 +67,7 @@ def run(img_dir, engine):
 
     def reset_page_number():
         st.session_state.page_number = 0
+        
     
     def go_to_image():
         file_index = st.session_state["files"].index(st.session_state["file"])
