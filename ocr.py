@@ -5,7 +5,6 @@ from tablepyxl import tablepyxl
 from copy import deepcopy
 import io
 import numpy as np
-from deskew import determine_skew
 from skimage.transform import rotate
 
 # def strighten_image(img):

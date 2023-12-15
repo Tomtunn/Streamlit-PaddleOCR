@@ -1,209 +1,5 @@
 {
-    "name1": [
-        {
-            "id": "circle_right",
-            "type": "image",
-            "box_pos": [
-                800,
-                1530,
-                1200,
-                1850
-            ]
-        },
-        {
-            "id": "circle_left",
-            "type": "image",
-            "box_pos": [
-                1500,
-                1530,
-                1900,
-                1850
-            ]
-        }
-    ],
-    "name2": [
-        {
-            "id": "name",
-            "type": "text",
-            "box_pos": [
-                127.44,
-                741.671,
-                204.817,
-                749.921
-            ]
-        },
-        {
-            "id": "id",
-            "type": "text",
-            "box_pos": [
-                127.44,
-                721.511,
-                164.136,
-                729.761
-            ]
-        },
-        {
-            "id": "DOB",
-            "type": "text",
-            "box_pos": [
-                127.44,
-                708.551,
-                164.119,
-                716.801
-            ]
-        }
-    ],
-    "name5": [
-        {
-            "id": "info",
-            "type": "table",
-            "box_pos": [
-                288,
-                80,
-                1926,
-                475
-            ]
-        },
-        {
-            "id": "topic",
-            "type": "table",
-            "box_pos": [
-                278,
-                461,
-                1935,
-                569
-            ]
-        },
-        {
-            "id": "od",
-            "type": "image",
-            "box_pos": [
-                325,
-                650,
-                1208,
-                1385
-            ]
-        }
-    ],
-    "name6": [
-        {
-            "id": "name",
-            "type": "table",
-            "box_pos": [
-                302,
-                80,
-                812,
-                240
-            ]
-        },
-        {
-            "id": "id",
-            "type": "table",
-            "box_pos": [
-                302,
-                245,
-                812,
-                305
-            ]
-        },
-        {
-            "id": "od",
-            "type": "image",
-            "box_pos": [
-                311,
-                1550,
-                811,
-                2087
-            ]
-        }
-    ],
-    "new": [
-        {
-            "id": "bra",
-            "type": "table",
-            "box_pos": [
-                292,
-                80,
-                2407,
-                1432
-            ]
-        },
-        {
-            "id": "",
-            "type": "image",
-            "box_pos": [
-                321,
-                2121,
-                2445,
-                2865
-            ]
-        }
-    ],
-    "new1": [
-        {
-            "id": "bra1",
-            "type": "table",
-            "box_pos": [
-                297,
-                108,
-                2549,
-                570
-            ]
-        },
-        {
-            "id": "bra2",
-            "type": "image",
-            "box_pos": [
-                316,
-                622,
-                1548,
-                2088
-            ]
-        },
-        {
-            "id": "bra1",
-            "type": "table",
-            "box_pos": [
-                297,
-                108,
-                2549,
-                570
-            ]
-        },
-        {
-            "id": "bra2",
-            "type": "image",
-            "box_pos": [
-                316,
-                622,
-                1548,
-                2088
-            ]
-        }
-    ],
-    "asd": [
-        {
-            "id": "asd",
-            "type": "table",
-            "box_pos": [
-                325,
-                650,
-                1189,
-                1380
-            ]
-        },
-        {
-            "id": "",
-            "type": "table",
-            "box_pos": [
-                339,
-                1428,
-                2416,
-                2139
-            ]
-        }
-    ],
-    "idividual_info": [
+    "individual_info": [
         {
             "id": "Name",
             "type": "table",
@@ -332,6 +128,188 @@
                 404,
                 1624,
                 461
+            ]
+        }
+    ],
+    "Example1_GCA": [
+        {
+            "id": "individual_info",
+            "type": "table",
+            "box_pos": [
+                308,
+                112,
+                1895,
+                469
+            ]
+        },
+        {
+            "id": "title_name",
+            "type": "table",
+            "box_pos": [
+                308,
+                470,
+                1895,
+                571
+            ]
+        },
+        {
+            "id": "OD_thickness_map",
+            "type": "both",
+            "box_pos": [
+                327,
+                607,
+                1207,
+                1445
+            ]
+        },
+        {
+            "id": "OS_thickness_map",
+            "type": "both",
+            "box_pos": [
+                1499,
+                594,
+                2384,
+                1438
+            ]
+        },
+        {
+            "id": "OD_map",
+            "type": "image",
+            "box_pos": [
+                327,
+                1564,
+                811,
+                2048
+            ]
+        },
+        {
+            "id": "OS_map",
+            "type": "image",
+            "box_pos": [
+                1898,
+                1559,
+                2384,
+                2048
+            ]
+        },
+        {
+            "id": "OD1",
+            "type": "table",
+            "box_pos": [
+                979,
+                1548,
+                1058,
+                1616
+            ]
+        },
+        {
+            "id": "OD2",
+            "type": "table",
+            "box_pos": [
+                1089,
+                1600,
+                1163,
+                1676
+            ]
+        },
+        {
+            "id": "OD3",
+            "type": "table",
+            "box_pos": [
+                1086,
+                1702,
+                1162,
+                1776
+            ]
+        },
+        {
+            "id": "OD4",
+            "type": "table",
+            "box_pos": [
+                982,
+                1762,
+                1053,
+                1825
+            ]
+        },
+        {
+            "id": "OD5",
+            "type": "table",
+            "box_pos": [
+                877,
+                1600,
+                948,
+                1671
+            ]
+        },
+        {
+            "id": "OD6",
+            "type": "table",
+            "box_pos": [
+                869,
+                1707,
+                951,
+                1772
+            ]
+        },
+        {
+            "id": "OS",
+            "type": "table",
+            "box_pos": [
+                1493,
+                1526,
+                1883,
+                1853
+            ]
+        },
+        {
+            "id": "table1",
+            "type": "table",
+            "box_pos": [
+                927,
+                1856,
+                1787,
+                2111
+            ]
+        },
+        {
+            "id": "OD_Bscan",
+            "type": "table",
+            "box_pos": [
+                330,
+                2106,
+                1300,
+                2160
+            ]
+        },
+        {
+            "id": "OS_Bscan",
+            "type": "table",
+            "box_pos": [
+                1411,
+                2106,
+                2384,
+                2166
+            ]
+        },
+        {
+            "id": "OD_Bscan_img",
+            "type": "image",
+            "box_pos": [
+                330,
+                2161,
+                1301,
+                2807
+            ]
+        },
+        {
+            "id": "OS_Bscan_img",
+            "type": "image",
+            "box_pos": [
+                1405,
+                2161,
+                2386,
+                2810
             ]
         }
     ]
