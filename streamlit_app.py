@@ -207,7 +207,7 @@ def run(img_dir, engine):
         df_ls = [pd.DataFrame()] * len(preview_imgs) # crete list of zeros for save annotation predict df
         for i, prev_img in enumerate(preview_imgs):
             prev_img[0].thumbnail((500, 300))
-            col1, col2 = st.columns(2)
+            col1, col2, col3 = st.columns(3)
             with col1:
                 col1.image(prev_img[0])
             with col2:
@@ -229,6 +229,7 @@ def run(img_dir, engine):
 
                 select_id = col2.text_input('ID Name', img_id if img_id else f'box_{i}', key=f"label_{i}")
                 im.set_annotation(i, select_type, select_id)
+            with col3:
                 
                 if select_type == "table" or select_type == "both":
                     xmin, ymin, xmax, ymax = get_box_coords(rects, i)
@@ -296,7 +297,8 @@ def run(img_dir, engine):
             
 
 if __name__ == "__main__":
-    # st.set_page_config(page_title="The Ramsey Highlights", layout="wide")
+    st.set_page_config(page_title="The Ramsey Highlights", layout="wide")
+    
     @st.cache_resource()
     def get_model():
         table_engine = load_model()
