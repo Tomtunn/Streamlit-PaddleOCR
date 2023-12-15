@@ -24,7 +24,7 @@ This web app leverages Optical Character Recognition (OCR) to extract text from 
   
 <br>
 
-https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/15915337-ca98-4c98-a5e8-baa9544079bf
+https://github.com/Tomtunn/EGBI_433_image_processing/assets/148253233/bc2e8526-88ab-426e-b23e-aa5cb9602680
 
 - Auto-extraction
   
